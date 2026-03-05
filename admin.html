@@ -571,14 +571,14 @@ import {
 } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDEMOKEYReplaceWithYourKey",
+  apiKey: "AIzaSyBFpU7NldfS_b4pCjhStG-nkNhMI_W1uIk",
   authDomain: "portfolio-profile-16519.firebaseapp.com",
   projectId: "portfolio-profile-16519",
-  storageBucket: "portfolio-profile-16519.appspot.com",
-  messagingSenderId: "000000000000",
-  appId: "1:000000000000:web:0000000000000000000000"
+  storageBucket: "portfolio-profile-16519.firebasestorage.app",
+  messagingSenderId: "486886015305",
+  appId: "1:486886015305:web:23d05f3ac64eab483f1a98",
+  measurementId: "G-K01957ND5G"
 };
-
 const ADMIN_EMAIL = "innoxoketh@gmail.com";
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
@@ -920,7 +920,7 @@ window.deleteMessage = async (id) => {
     showToast("Deleted.", "success");
     loadMessages();
   } catch(e) { showToast("Error: " + e.message, "error"); }
-};
+}; 
 
 // ── NOTIFICATIONS ─────────────────────────────────
 let notifsData = [];
