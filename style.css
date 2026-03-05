@@ -543,3 +543,69 @@ code, .mono { font-family: 'DM Mono', monospace; }
   .hero-stats { gap: 14px; }
   .stat-num { font-size: 22px; }
 }
+.profile-square {
+  position: relative;
+  width: 160px;
+  height: 160px;
+}
+
+.profile-square .pic {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 24px;
+  display: block;
+}
+
+.profile-square .pic-fallback {
+  width: 160px;
+  height: 160px;
+  border-radius: 24px;
+  background: linear-gradient(135deg, #0d1521, #111d2e);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 48px;
+  font-weight: 800;
+  color: #3fffa0;
+  letter-spacing: -1px;
+}
+
+.profile-square .frame-tl,
+.profile-square .frame-br {
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  border-color: #3fffa0;
+  border-style: solid;
+}
+
+.profile-square .frame-tl {
+  top: -5px;
+  left: -5px;
+  border-width: 3px 0 0 3px;
+  border-radius: 4px 0 0 0;
+}
+
+.profile-square .frame-br {
+  bottom: -5px;
+  right: -5px;
+  border-width: 0 3px 3px 0;
+  border-radius: 0 0 4px 0;
+}
+
+.profile-square .tag {
+  position: absolute;
+  bottom: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #3fffa0;
+  color: #000;
+  font-size: 10px;
+  font-weight: 800;
+  padding: 3px 12px;
+  border-radius: 20px;
+  white-space: nowrap;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
