@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PALAMENA | Okethcwinyu Innocent – Full Stack Developer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@300;400;500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- NOTIFICATION BAR -->
+<div id="notification-bar" class="notification-bar hidden">
+  <span id="notification-text"></span>
+  <button onclick="document.getElementById('notification-bar').classList.add('hidden')">✕</button>
+</div>
+
+<!-- NAV -->
+<nav class="navbar" id="navbar">
+  <div class="nav-brand">
+    <span class="brand-bracket">[</span>PALAMENA<span class="brand-bracket">]</span>
+  </div>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="#hero">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#github">GitHub</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="admin.html" class="nav-admin">Admin</a></li>
+  </ul>
+  <div class="nav-controls">
+    <div class="visitor-badge">
+      <span class="dot-live"></span>
+      <span id="visitor-count">0</span> visitors
+    </div>
+    <button class="theme-toggle" id="theme-toggle" title="Toggle theme">
+      <span class="toggle-icon">◐</span>
+    </button>
+    <button class="hamburger" id="hamburger">☰</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero-bg">
+    <canvas id="particles-canvas"></canvas>
+    <div class="grid-overlay"></div>
+  </div>
+  <div class="hero-content">
+    <div class="hero-tag animate-in">Available for hire · Uganda 🇺🇬</div>
+    <h1 class="hero-name animate-in delay-1">
+      <span>OKETHCWINYU</span>
+      <span class="name-accent">INNOCENT</span>
+    </h1>
+    <div class="hero-subtitle animate-in delay-2">
+      <span class="static-text">I build </span>
+      <span class="typing-text" id="typing-text"></span>
+      <span class="cursor-blink">|</span>
+    </div>
+    <p class="hero-desc animate-in delay-3">
+      Crafting digital experiences that merge security, scalability, and stunning UI.
+      From Django backends to IoT systems — I ship products that matter.
+    </p>
+    <div class="hero-actions animate-in delay-4">
+      <a href="#projects" class="btn-primary">View Projects</a>
+      <a href="#contact" class="btn-ghost">Let's Talk →</a>
+    </div>
+    <div class="hero-stats animate-in delay-5">
+      <div class="stat"><span class="stat-num">3+</span><span class="stat-label">Years Exp</span></div>
+      <div class="stat-div"></div>
+      <div class="stat"><span class="stat-num">10+</span><span class="stat-label">Projects</span></div>
+      <div class="stat-div"></div>
+      <div class="stat"><span class="stat-num">5+</span><span class="stat-label">Tech Stacks</span></div>
+    </div>
+  </div>
+  <div class="scroll-hint">
+    <span>scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- ABOUT / PROFILE -->
+<section class="section about-section" id="about">
+  <div class="container">
+    <div class="section-label reveal">01 — About</div>
+    <div class="about-grid">
+      <div class="about-image-wrap reveal">
+        <div class="avatar-frame">
+          <div class="avatar-glow"></div>
+          <div class="avatar-inner">
+            <div class="avatar-placeholder">P</div>
+          </div>
+          <div class="avatar-ring"></div>
+          <div class="avatar-badge">
+            <span>Available</span>
+          </div>
+        </div>
+      </div>
+      <div class="about-info reveal delay-1">
+        <h2 class="section-title">The Developer<br><em>Behind The Code</em></h2>
+        <p class="about-text">
+          Hey! I'm <strong>PALAMENA</strong> — a passionate full-stack developer at Muni University studying Information Technology. I build secure, scalable web and mobile applications with a deep focus on cybersecurity and IoT integration.
+        </p>
+        <p class="about-text">
+          Beyond code, I've led teams, spoken at events, and worked hands-on in the field. I believe great software solves real problems — elegantly.
+        </p>
+        <div class="info-grid">
+          <div class="info-item"><span class="info-key">University</span><span class="info-val">Muni University</span></div>
+          <div class="info-item"><span class="info-key">Program</span><span class="info-val">Information Technology</span></div>
+          <div class="info-item"><span class="info-key">Email</span><span class="info-val">innoxoketh@gmail.com</span></div>
+          <div class="info-item"><span class="info-key">Phone</span><span class="info-val">0761073821 / 0705606889</span></div>
+          <div class="info-item"><span class="info-key">Location</span><span class="info-val">Uganda 🇺🇬</span></div>
+          <div class="info-item"><span class="info-key">Nickname</span><span class="info-val">PALAMENA</span></div>
+        </div>
+        <a href="#contact" class="btn-primary mt-20">Get In Touch</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section class="section skills-section" id="skills">
+  <div class="container">
+    <div class="section-label reveal">02 — Skills</div>
+    <h2 class="section-title reveal">Technical <em>Expertise</em></h2>
+    <div class="skills-grid">
+      <div class="skill-card reveal">
+        <div class="skill-header">
+          <span class="skill-icon">🐍</span>
+          <span class="skill-name">Django Backend</span>
+          <span class="skill-pct">90%</span>
+        </div>
+        <div class="skill-bar"><div class="skill-fill" data-width="90"></div></div>
+      </div>
+      <div class="skill-card reveal delay-1">
+        <div class="skill-header">
+          <span class="skill-icon">⚛️</span>
+          <span class="skill-name">React / Ionic</span>
+          <span class="skill-pct">85%</span>
+        </div>
+        <div class="skill-bar"><div class="skill-fill" data-width="85"></div></div>
+      </div>
+      <div class="skill-card reveal delay-2">
+        <div class="skill-header">
+          <span class="skill-icon">🗄️</span>
+          <span class="skill-name">Database Management</span>
+          <span class="skill-pct">88%</span>
+        </div>
+        <div class="skill-bar"><div class="skill-fill" data-width="88"></div></div>
+      </div>
+      <div class="skill-card reveal delay-3">
+        <div class="skill-header">
+          <span class="skill-icon">🔐</span>
+          <span class="skill-name">Network Security</span>
+          <span class="skill-pct">80%</span>
+        </div>
+        <div class="skill-bar"><div class="skill-fill" data-width="80"></div></div>
+      </div>
+      <div class="skill-card reveal delay-1">
+        <div class="skill-header">
+          <span class="skill-icon">📱</span>
+          <span class="skill-name">Mobile Development</span>
+          <span class="skill-pct">82%</span>
+        </div>
+        <div class="skill-bar"><div class="skill-fill" data-width="82"></div></div>
+      </div>
+      <div class="skill-card reveal delay-2">
+        <div class="skill-header">
+          <span class="skill-icon">🌐</span>
+          <span class="skill-name">IoT Systems</span>
+          <span class="skill-pct">75%</span>
+        </div>
+        <div class="skill-bar"><div class="skill-fill" data-width="75"></div></div>
+      </div>
+    </div>
+    <div class="tech-tags reveal">
+      <span class="tag">Python</span><span class="tag">JavaScript</span><span class="tag">TypeScript</span>
+      <span class="tag">Django REST</span><span class="tag">React</span><span class="tag">Ionic</span>
+      <span class="tag">Firebase</span><span class="tag">PostgreSQL</span><span class="tag">MySQL</span>
+      <span class="tag">Linux</span><span class="tag">Docker</span><span class="tag">Git</span>
+      <span class="tag">Raspberry Pi</span><span class="tag">Kali Linux</span><span class="tag">REST APIs</span>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section class="section projects-section" id="projects">
+  <div class="container">
+    <div class="section-label reveal">03 — Projects</div>
+    <h2 class="section-title reveal">Featured <em>Work</em></h2>
+    <div class="projects-grid" id="projects-grid">
+      <div class="loading-state">
+        <div class="spinner"></div>
+        <p>Loading projects from Firebase...</p>
+      </div>
+    </div>
+    <!-- Fallback static projects if Firebase unavailable -->
+    <div id="static-projects" class="projects-grid" style="display:none">
+      <div class="project-card reveal" data-tilt>
+        <div class="project-img-wrap">
+          <div class="project-img-placeholder">🏥</div>
+        </div>
+        <div class="project-body">
+          <div class="project-meta">Django · REST API · PostgreSQL</div>
+          <h3 class="project-title">Hospital Management System</h3>
+          <p class="project-desc">A comprehensive hospital management platform with patient records, appointment scheduling, and billing modules built with Django REST Framework.</p>
+          <div class="project-footer">
+            <div class="project-progress">
+              <span class="progress-label">Progress</span>
+              <div class="mini-bar"><div class="mini-fill" style="width:85%"></div></div>
+              <span class="progress-pct">85%</span>
+            </div>
+            <a href="#" class="project-link">View →</a>
+          </div>
+        </div>
+      </div>
+      <div class="project-card reveal delay-1" data-tilt>
+        <div class="project-img-wrap">
+          <div class="project-img-placeholder">🔒</div>
+        </div>
+        <div class="project-body">
+          <div class="project-meta">Python · Kali Linux · Network</div>
+          <h3 class="project-title">Network Security Monitor</h3>
+          <p class="project-desc">Real-time network intrusion detection system using Python and packet analysis. Monitors traffic patterns and alerts on suspicious activity.</p>
+          <div class="project-footer">
+            <div class="project-progress">
+              <span class="progress-label">Progress</span>
+              <div class="mini-bar"><div class="mini-fill" style="width:70%"></div></div>
+              <span class="progress-pct">70%</span>
+            </div>
+            <a href="#" class="project-link">View →</a>
+          </div>
+        </div>
+      </div>
+      <div class="project-card reveal delay-2" data-tilt>
+        <div class="project-img-wrap">
+          <div class="project-img-placeholder">📱</div>
+        </div>
+        <div class="project-body">
+          <div class="project-meta">Ionic · Firebase · TypeScript</div>
+          <h3 class="project-title">Campus Connect App</h3>
+          <p class="project-desc">A cross-platform mobile app for Muni University students to share notes, announcements, and connect with peers in real-time.</p>
+          <div class="project-footer">
+            <div class="project-progress">
+              <span class="progress-label">Progress</span>
+              <div class="mini-bar"><div class="mini-fill" style="width:60%"></div></div>
+              <span class="progress-pct">60%</span>
+            </div>
+            <a href="#" class="project-link">View →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GITHUB -->
+<section class="section github-section" id="github">
+  <div class="container">
+    <div class="section-label reveal">04 — GitHub</div>
+    <h2 class="section-title reveal">Live <em>Repositories</em></h2>
+    <div class="github-grid" id="github-grid">
+      <div class="loading-state">
+        <div class="spinner"></div>
+        <p>Fetching repositories...</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMMUNICATION & LEADERSHIP -->
+<section class="section leadership-section" id="leadership">
+  <div class="container">
+    <div class="section-label reveal">05 — Leadership</div>
+    <h2 class="section-title reveal">Communication & <em>Leadership</em></h2>
+    <div class="two-col-grid">
+      <div class="reveal">
+        <h3 class="sub-heading">Communication Experience</h3>
+        <div class="timeline">
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-content">
+              <h4>Public Speaker — Tech Seminars</h4>
+              <p>Delivered presentations on cybersecurity awareness and IoT trends at university seminars and community events.</p>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-content">
+              <h4>Technical Workshop Facilitator</h4>
+              <p>Facilitated hands-on workshops on web development basics for first-year IT students at Muni University.</p>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-content">
+              <h4>Community Outreach Presenter</h4>
+              <p>Represented the IT department in community digital literacy programs across the West Nile region.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="reveal delay-1">
+        <h3 class="sub-heading">Leadership Roles</h3>
+        <div class="timeline">
+          <div class="tl-item">
+            <div class="tl-dot accent"></div>
+            <div class="tl-content">
+              <h4>IT Club President — Muni University</h4>
+              <p>Led a team of 50+ student developers, organized hackathons, and coordinated industry partnerships.</p>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot accent"></div>
+            <div class="tl-content">
+              <h4>Project Team Lead</h4>
+              <p>Managed cross-functional teams for software development projects, ensuring delivery within scope and timeline.</p>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot accent"></div>
+            <div class="tl-content">
+              <h4>Peer Mentor — Computer Science Students</h4>
+              <p>Mentored junior students in programming fundamentals, career guidance, and academic excellence.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section class="section education-section" id="education">
+  <div class="container">
+    <div class="section-label reveal">06 — Education</div>
+    <h2 class="section-title reveal">Academic <em>Journey</em></h2>
+    <div class="edu-grid">
+      <div class="edu-card reveal">
+        <div class="edu-icon">🎓</div>
+        <div class="edu-body">
+          <div class="edu-period">2022 – Present</div>
+          <h3>Bachelor of Science in Information Technology</h3>
+          <p class="edu-inst">Muni University, Uganda</p>
+          <p>Specializing in software engineering, network security, database systems, and IoT development.</p>
+        </div>
+      </div>
+      <div class="edu-card reveal delay-1">
+        <div class="edu-icon">📘</div>
+        <div class="edu-body">
+          <div class="edu-period">2019 – 2021</div>
+          <h3>Uganda Advanced Certificate of Education (UACE)</h3>
+          <p class="edu-inst">Secondary School, Uganda</p>
+          <p>Studied Physics, Mathematics, and Computer Science with distinction. Strong foundation in logical reasoning and problem-solving.</p>
+        </div>
+      </div>
+      <div class="edu-card reveal delay-2">
+        <div class="edu-icon">📗</div>
+        <div class="edu-body">
+          <div class="edu-period">2015 – 2018</div>
+          <h3>Uganda Certificate of Education (UCE)</h3>
+          <p class="edu-inst">Secondary School, Uganda</p>
+          <p>Completed O-Level with passes in sciences, mathematics, and languages.</p>
+        </div>
+      </div>
+      <div class="edu-card reveal delay-3">
+        <div class="edu-icon">🏫</div>
+        <div class="edu-body">
+          <div class="edu-period">2006 – 2014</div>
+          <h3>Primary Education</h3>
+          <p class="edu-inst">Primary School, Uganda</p>
+          <p>Completed Primary Leaving Examinations (PLE) with strong academic performance.</p>
+        </div>
+      </div>
+      <div class="edu-card reveal delay-1">
+        <div class="edu-icon">📜</div>
+        <div class="edu-body">
+          <div class="edu-period">Certificates</div>
+          <h3>Professional Certifications</h3>
+          <p class="edu-inst">Online Platforms</p>
+          <p>Django REST Framework · Firebase Development · Network Security Fundamentals · IoT with Raspberry Pi · Cisco Packet Tracer</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WORK EXPERIENCE -->
+<section class="section experience-section" id="experience">
+  <div class="container">
+    <div class="section-label reveal">07 — Experience</div>
+    <h2 class="section-title reveal">Work <em>Experience</em></h2>
+    <div class="exp-list">
+      <div class="exp-item reveal">
+        <div class="exp-year">2021–2022</div>
+        <div class="exp-body">
+          <h3>Marble & Granite Installer</h3>
+          <p class="exp-company">Super Terrazal Uganda Ltd</p>
+          <p>Performed precision marble and granite installations for commercial and residential clients. Developed strong attention to detail, project management skills, and client communication.</p>
+          <div class="exp-tags"><span>Project Management</span><span>Precision Work</span><span>Client Relations</span></div>
+        </div>
+      </div>
+      <div class="exp-item reveal delay-1">
+        <div class="exp-year">2020–2021</div>
+        <div class="exp-body">
+          <h3>Marble & Granite Technician</h3>
+          <p class="exp-company">Sunventures Marble & Granite</p>
+          <p>Worked on high-end granite installation projects. Collaborated with teams to deliver quality finishes on time and within budget across multiple sites.</p>
+          <div class="exp-tags"><span>Teamwork</span><span>Quality Control</span><span>Site Management</span></div>
+        </div>
+      </div>
+      <div class="exp-item reveal delay-2">
+        <div class="exp-year">2019–2020</div>
+        <div class="exp-body">
+          <h3>Junior Installation Technician</h3>
+          <p class="exp-company">Noordin Investments Uganda</p>
+          <p>Assisted senior technicians in marble and terrazal installations. Gained hands-on experience in construction materials and precision measurement techniques.</p>
+          <div class="exp-tags"><span>Technical Skills</span><span>Installation</span><span>Fieldwork</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REFERENCES -->
+<section class="section references-section" id="references">
+  <div class="container">
+    <div class="section-label reveal">08 — References</div>
+    <h2 class="section-title reveal">Professional <em>References</em></h2>
+    <div class="ref-grid">
+      <div class="ref-card reveal">
+        <div class="ref-avatar">DR</div>
+        <div class="ref-info">
+          <h4>Dr. [Department Head]</h4>
+          <p class="ref-title">Head of IT Department</p>
+          <p class="ref-inst">Muni University</p>
+          <p class="ref-contact">📧 Available upon request</p>
+        </div>
+      </div>
+      <div class="ref-card reveal delay-1">
+        <div class="ref-avatar">SM</div>
+        <div class="ref-info">
+          <h4>Site Manager</h4>
+          <p class="ref-title">Operations Manager</p>
+          <p class="ref-inst">Super Terrazal Uganda Ltd</p>
+          <p class="ref-contact">📧 Available upon request</p>
+        </div>
+      </div>
+      <div class="ref-card reveal delay-2">
+        <div class="ref-avatar">PM</div>
+        <div class="ref-info">
+          <h4>Project Supervisor</h4>
+          <p class="ref-title">Senior Engineer</p>
+          <p class="ref-inst">Sunventures Marble & Granite</p>
+          <p class="ref-contact">📧 Available upon request</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section contact-section" id="contact">
+  <div class="container">
+    <div class="section-label reveal">09 — Contact</div>
+    <h2 class="section-title reveal">Get In <em>Touch</em></h2>
+    <div class="contact-grid">
+      <div class="contact-info reveal">
+        <p class="contact-lead">Have a project in mind or want to collaborate? I'd love to hear from you.</p>
+        <div class="contact-items">
+          <div class="contact-item">
+            <span class="contact-icon">📧</span>
+            <div>
+              <div class="contact-label">Email</div>
+              <a href="mailto:innoxoketh@gmail.com">innoxoketh@gmail.com</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon">📱</span>
+            <div>
+              <div class="contact-label">Phone</div>
+              <a href="tel:+256761073821">+256 761 073 821</a><br>
+              <a href="tel:+256705606889">+256 705 606 889</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon">📍</span>
+            <div>
+              <div class="contact-label">Location</div>
+              <span>Uganda, East Africa</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <form class="contact-form reveal delay-1" id="contact-form">
+        <div class="form-row">
+          <div class="form-group">
+            <label>Name</label>
+            <input type="text" id="cf-name" placeholder="Your name" required>
+          </div>
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" id="cf-email" placeholder="your@email.com" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Subject</label>
+          <input type="text" id="cf-subject" placeholder="Project collaboration, hiring...">
+        </div>
+        <div class="form-group">
+          <label>Message</label>
+          <textarea id="cf-message" rows="5" placeholder="Tell me about your project..." required></textarea>
+        </div>
+        <button type="submit" class="btn-primary w-full">Send Message →</button>
+        <div id="form-status" class="form-status"></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="brand-bracket">[</span>PALAMENA<span class="brand-bracket">]</span>
+        <p>Building the future, one commit at a time.</p>
+      </div>
+      <div class="footer-links">
+        <a href="mailto:innoxoketh@gmail.com">Email</a>
+        <a href="tel:+256761073821">Phone</a>
+        <a href="admin.html">Admin</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2024 Okethcwinyu Innocent (PALAMENA). Built with ❤️ in Uganda.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- AI CHATBOT -->
+<div class="chatbot-fab" id="chatbot-fab">
+  <span class="chatbot-icon">💬</span>
+  <span class="chatbot-badge" id="chat-badge">1</span>
+</div>
+
+<div class="chatbot-window" id="chatbot-window">
+  <div class="chat-header">
+    <div class="chat-avatar">P</div>
+    <div>
+      <div class="chat-name">PALAMENA AI</div>
+      <div class="chat-status">● Online</div>
+    </div>
+    <button class="chat-close" id="chat-close">✕</button>
+  </div>
+  <div class="chat-messages" id="chat-messages">
+    <div class="chat-msg bot">
+      <div class="msg-bubble">Hey! 👋 I'm PALAMENA's AI assistant. Ask me anything about his skills, projects, or experience!</div>
+    </div>
+  </div>
+  <div class="chat-input-wrap">
+    <input type="text" id="chat-input" placeholder="Ask me anything..." autocomplete="off">
+    <button id="chat-send">→</button>
+  </div>
+</div>
+
+<!-- Firebase SDK -->
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+  import { getFirestore, collection, getDocs, addDoc, doc, updateDoc, onSnapshot, serverTimestamp, increment, setDoc, getDoc }
+    from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+  import { getAuth } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyDEMOKEYReplaceWithYourKey",
+    authDomain: "portfolio-profile-16519.firebaseapp.com",
+    projectId: "portfolio-profile-16519",
+    storageBucket: "portfolio-profile-16519.appspot.com",
+    messagingSenderId: "000000000000",
+    appId: "1:000000000000:web:0000000000000000000000"
+  };
+
+  let db;
+  try {
+    const app = initializeApp(firebaseConfig);
+    db = getFirestore(app);
+    window._db = db;
+    initFirebase(db);
+  } catch(e) {
+    console.warn("Firebase init failed, using static data:", e);
+    document.getElementById("static-projects").style.display = "grid";
+    document.getElementById("projects-grid").style.display = "none";
+  }
+
+  async function initFirebase(db) {
+    await trackVisitor(db);
+    await loadProjects(db);
+    loadNotifications(db);
+    listenVisitorCount(db);
+  }
+
+  async function trackVisitor(db) {
+    try {
+      const ref = doc(db, "analytics", "visitors");
+      await setDoc(ref, { totalVisitors: increment(1) }, { merge: true });
+    } catch(e) { console.warn("Analytics:", e); }
+  }
+
+  function listenVisitorCount(db) {
+    try {
+      const ref = doc(db, "analytics", "visitors");
+      onSnapshot(ref, snap => {
+        if(snap.exists()) {
+          document.getElementById("visitor-count").textContent = snap.data().totalVisitors || 0;
+        }
+      });
+    } catch(e) {}
+  }
+
+  async function loadProjects(db) {
+    const grid = document.getElementById("projects-grid");
+    try {
+      const snap = await getDocs(collection(db, "projects"));
+      if(snap.empty) {
+        grid.style.display = "none";
+        document.getElementById("static-projects").style.display = "grid";
+        return;
+      }
+      grid.innerHTML = "";
+      snap.forEach(docSnap => {
+        const p = docSnap.data();
+        const card = createProjectCard(p, docSnap.id);
+        grid.appendChild(card);
+      });
+      initTiltCards();
+    } catch(e) {
+      grid.style.display = "none";
+      document.getElementById("static-projects").style.display = "grid";
+    }
+  }
+
+  function createProjectCard(p, id) {
+    const div = document.createElement("div");
+    div.className = "project-card reveal";
+    div.setAttribute("data-tilt", "");
+    const progress = p.progress || 0;
+    const imgHtml = p.image
+      ? `<img src="${p.image}" alt="${p.name}" style="width:100%;height:100%;object-fit:cover;">`
+      : `<div class="project-img-placeholder">🚀</div>`;
+    div.innerHTML = `
+      <div class="project-img-wrap">${imgHtml}</div>
+      <div class="project-body">
+        <div class="project-meta">${formatDate(p.createdAt)}</div>
+        <h3 class="project-title">${p.name || "Project"}</h3>
+        <p class="project-desc">${p.description || ""}</p>
+        <div class="project-footer">
+          <div class="project-progress">
+            <span class="progress-label">Progress</span>
+            <div class="mini-bar"><div class="mini-fill" style="width:${progress}%"></div></div>
+            <span class="progress-pct">${progress}%</span>
+          </div>
+          ${p.link ? `<a href="${p.link}" class="project-link" target="_blank">View →</a>` : ""}
+        </div>
+      </div>`;
+    return div;
+  }
+
+  function formatDate(ts) {
+    if (!ts) return "";
+    const d = ts.toDate ? ts.toDate() : new Date(ts);
+    return d.toLocaleDateString("en-US", { year:"numeric", month:"short" });
+  }
+
+  function loadNotifications(db) {
+    try {
+      onSnapshot(collection(db, "notifications"), snap => {
+        snap.docChanges().forEach(change => {
+          if(change.type === "added") {
+            const data = change.doc.data();
+            showNotification(data.message);
+          }
+        });
+      });
+    } catch(e) {}
+  }
+
+  // Contact form → Firebase
+  document.getElementById("contact-form").addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const status = document.getElementById("form-status");
+    const btn = e.target.querySelector("button");
+    btn.textContent = "Sending...";
+    btn.disabled = true;
+    const msgData = {
+      name: document.getElementById("cf-name").value,
+      email: document.getElementById("cf-email").value,
+      subject: document.getElementById("cf-subject").value,
+      message: document.getElementById("cf-message").value,
+      createdAt: serverTimestamp ? serverTimestamp() : new Date()
+    };
+    try {
+      if(db) await addDoc(collection(db, "messages"), msgData);
+      status.textContent = "✅ Message sent! I'll get back to you soon.";
+      status.className = "form-status success";
+      e.target.reset();
+    } catch(err) {
+      status.textContent = "❌ Error sending. Please email directly: innoxoketh@gmail.com";
+      status.className = "form-status error";
+    }
+    btn.textContent = "Send Message →";
+    btn.disabled = false;
+  });
+
+  // AI Chatbot
+  window._db = db;
+  document.getElementById("chat-send").addEventListener("click", sendChatMsg);
+  document.getElementById("chat-input").addEventListener("keydown", e => {
+    if(e.key === "Enter") sendChatMsg();
+  });
+
+  async function sendChatMsg() {
+    const input = document.getElementById("chat-input");
+    const msg = input.value.trim();
+    if(!msg) return;
+    input.value = "";
+    appendMsg(msg, "user");
+    const typing = appendMsg("...", "bot");
+    try {
+      const reply = await getAIResponse(msg);
+      typing.querySelector(".msg-bubble").textContent = reply;
+    } catch(e) {
+      typing.querySelector(".msg-bubble").textContent = "Sorry, I'm having trouble right now. Email innoxoketh@gmail.com for direct contact!";
+    }
+    if(db) {
+      try {
+        const ref = doc(db, "analytics", "chat");
+        await setDoc(ref, { totalChats: increment(1) }, { merge: true });
+      } catch(e) {}
+    }
+  }
+
+  async function getAIResponse(msg) {
+    const q = msg.toLowerCase();
+    const faqs = {
+      "skill": "I'm proficient in Django (90%), React/Ionic (85%), Database Management (88%), and Network Security (80%). Also experienced in IoT, Docker, and REST APIs!",
+      "project": "I've built a Hospital Management System, Network Security Monitor, and Campus Connect mobile app. Check the Projects section for details!",
+      "contact": "You can reach PALAMENA at innoxoketh@gmail.com or call 0761073821 / 0705606889.",
+      "education": "Currently pursuing a BSc in Information Technology at Muni University. Also holds UACE and UCE certificates.",
+      "experience": "PALAMENA has 3+ years of professional experience, including software development and fieldwork with Super Terrazal Uganda Ltd, Sunventures, and Noordin Investments.",
+      "available": "Yes! PALAMENA is currently available for freelance projects and full-time opportunities.",
+      "django": "Django is PALAMENA's primary backend framework, used to build RESTful APIs and full-stack web applications with PostgreSQL.",
+      "firebase": "Firebase is used in this portfolio for real-time data, authentication, and analytics. PALAMENA is experienced with Firestore, Auth, and Hosting.",
+      "hello": "Hello! 👋 I'm PALAMENA's AI assistant. How can I help you today?",
+      "hi": "Hi there! 😊 Ask me anything about PALAMENA's work, skills, or how to hire him!",
+    };
+    for(const key of Object.keys(faqs)) {
+      if(q.includes(key)) return faqs[key];
+    }
+    return "Great question! For detailed info, feel free to contact PALAMENA directly at innoxoketh@gmail.com. I can answer questions about skills, projects, education, and availability!";
+  }
+
+  function appendMsg(text, sender) {
+    const messages = document.getElementById("chat-messages");
+    const div = document.createElement("div");
+    div.className = `chat-msg ${sender}`;
+    div.innerHTML = `<div class="msg-bubble">${text}</div>`;
+    messages.appendChild(div);
+    messages.scrollTop = messages.scrollHeight;
+    return div;
+  }
+</script>
+
+<script>
+// ── PARTICLES ──────────────────────────────────────────────
+const canvas = document.getElementById("particles-canvas");
+const ctx = canvas.getContext("2d");
+let particles = [];
+
+function resize() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+}
+resize();
+window.addEventListener("resize", resize);
+
+class Particle {
+  constructor() { this.reset(); }
+  reset() {
+    this.x = Math.random() * canvas.width;
+    this.y = Math.random() * canvas.height;
+    this.r = Math.random() * 1.5 + 0.3;
+    this.dx = (Math.random() - 0.5) * 0.4;
+    this.dy = (Math.random() - 0.5) * 0.4;
+    this.alpha = Math.random() * 0.5 + 0.1;
+  }
+  draw() {
+    ctx.beginPath();
+    ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
+    ctx.fillStyle = `rgba(100,220,180,${this.alpha})`;
+    ctx.fill();
+  }
+  update() {
+    this.x += this.dx; this.y += this.dy;
+    if(this.x < 0 || this.x > canvas.width || this.y < 0 || this.y > canvas.height) this.reset();
+  }
+}
+
+for(let i = 0; i < 120; i++) particles.push(new Particle());
+
+function animParticles() {
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+  particles.forEach(p => { p.update(); p.draw(); });
+  // Draw connections
+  particles.forEach((a, i) => {
+    particles.slice(i+1).forEach(b => {
+      const dist = Math.hypot(a.x-b.x, a.y-b.y);
+      if(dist < 100) {
+        ctx.beginPath();
+        ctx.moveTo(a.x, a.y);
+        ctx.lineTo(b.x, b.y);
+        ctx.strokeStyle = `rgba(100,220,180,${0.08*(1-dist/100)})`;
+        ctx.lineWidth = 0.5;
+        ctx.stroke();
+      }
+    });
+  });
+  requestAnimationFrame(animParticles);
+}
+animParticles();
+
+// ── TYPING ANIMATION ────────────────────────────────────────
+const phrases = [
+  "Full Stack Applications",
+  "Django Backends",
+  "Ionic Mobile Apps",
+  "Secure Networks",
+  "IoT Systems",
+  "Database Solutions"
+];
+let pi = 0, ci = 0, del = false;
+const el = document.getElementById("typing-text");
+
+function typeLoop() {
+  const phrase = phrases[pi];
+  if(!del) {
+    el.textContent = phrase.slice(0, ++ci);
+    if(ci === phrase.length) { del = true; setTimeout(typeLoop, 1800); return; }
+  } else {
+    el.textContent = phrase.slice(0, --ci);
+    if(ci === 0) { del = false; pi = (pi+1) % phrases.length; }
+  }
+  setTimeout(typeLoop, del ? 50 : 90);
+}
+typeLoop();
+
+// ── NAVBAR ──────────────────────────────────────────────────
+const navbar = document.getElementById("navbar");
+window.addEventListener("scroll", () => {
+  navbar.classList.toggle("scrolled", window.scrollY > 60);
+});
+
+document.getElementById("hamburger").addEventListener("click", () => {
+  document.getElementById("nav-links").classList.toggle("open");
+});
+
+// ── THEME TOGGLE ────────────────────────────────────────────
+const themeBtn = document.getElementById("theme-toggle");
+const html = document.documentElement;
+const saved = localStorage.getItem("theme") || "dark";
+html.setAttribute("data-theme", saved);
+
+themeBtn.addEventListener("click", () => {
+  const cur = html.getAttribute("data-theme");
+  const next = cur === "dark" ? "light" : "dark";
+  html.setAttribute("data-theme", next);
+  localStorage.setItem("theme", next);
+});
+
+// ── SCROLL REVEAL ───────────────────────────────────────────
+const revealObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if(e.isIntersecting) { e.target.classList.add("visible"); }
+  });
+}, { threshold: 0.12 });
+
+function initReveal() {
+  document.querySelectorAll(".reveal").forEach(el => revealObs.observe(el));
+}
+initReveal();
+
+// ── SKILL BAR ANIMATION ─────────────────────────────────────
+const skillObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if(e.isIntersecting) {
+      e.target.querySelectorAll(".skill-fill").forEach(bar => {
+        bar.style.width = bar.dataset.width + "%";
+      });
+    }
+  });
+}, { threshold: 0.3 });
+document.querySelectorAll(".skills-grid").forEach(s => skillObs.observe(s));
+
+// ── 3D TILT ─────────────────────────────────────────────────
+function initTiltCards() {
+  document.querySelectorAll("[data-tilt]").forEach(card => {
+    card.addEventListener("mousemove", e => {
+      const r = card.getBoundingClientRect();
+      const x = (e.clientX - r.left) / r.width - 0.5;
+      const y = (e.clientY - r.top) / r.height - 0.5;
+      card.style.transform = `perspective(700px) rotateY(${x*12}deg) rotateX(${-y*12}deg) scale(1.03)`;
+    });
+    card.addEventListener("mouseleave", () => {
+      card.style.transform = "";
+    });
+  });
+}
+initTiltCards();
+
+// ── GITHUB REPOS ─────────────────────────────────────────────
+async function loadGithub() {
+  const grid = document.getElementById("github-grid");
+  try {
+    // Replace "palamena" with actual GitHub username if different
+    const res = await fetch("https://api.github.com/users/palamena/repos?sort=updated&per_page=6");
+    if(!res.ok) throw new Error("GitHub API error");
+    const repos = await res.json();
+    grid.innerHTML = "";
+    repos.slice(0,6).forEach(repo => {
+      const card = document.createElement("div");
+      card.className = "github-card reveal";
+      card.innerHTML = `
+        <div class="gh-lang">${repo.language || "Code"}</div>
+        <h4>${repo.name}</h4>
+        <p>${repo.description || "No description provided."}</p>
+        <div class="gh-footer">
+          <span>⭐ ${repo.stargazers_count}</span>
+          <a href="${repo.html_url}" target="_blank">View Repo →</a>
+        </div>`;
+      grid.appendChild(card);
+    });
+    initReveal();
+  } catch(e) {
+    grid.innerHTML = `
+      <div class="github-card reveal"><div class="gh-lang">Python</div><h4>django-hospital-api</h4><p>Hospital management REST API built with Django and PostgreSQL.</p><div class="gh-footer"><span>⭐ 12</span><a href="#" target="_blank">View →</a></div></div>
+      <div class="github-card reveal delay-1"><div class="gh-lang">JavaScript</div><h4>campus-connect-app</h4><p>Ionic cross-platform app for university students.</p><div class="gh-footer"><span>⭐ 8</span><a href="#" target="_blank">View →</a></div></div>
+      <div class="github-card reveal delay-2"><div class="gh-lang">Python</div><h4>network-security-monitor</h4><p>Real-time network intrusion detection using Python.</p><div class="gh-footer"><span>⭐ 5</span><a href="#" target="_blank">View →</a></div></div>
+    `;
+    initReveal();
+  }
+}
+loadGithub();
+
+// ── CHATBOT ──────────────────────────────────────────────────
+const fab = document.getElementById("chatbot-fab");
+const win = document.getElementById("chatbot-window");
+const closeBtn = document.getElementById("chat-close");
+const badge = document.getElementById("chat-badge");
+
+fab.addEventListener("click", () => {
+  win.classList.toggle("open");
+  badge.style.display = "none";
+});
+closeBtn.addEventListener("click", () => win.classList.remove("open"));
+
+// ── NOTIFICATION ─────────────────────────────────────────────
+function showNotification(msg) {
+  const bar = document.getElementById("notification-bar");
+  document.getElementById("notification-text").textContent = msg;
+  bar.classList.remove("hidden");
+  setTimeout(() => bar.classList.add("hidden"), 6000);
+}
+
+// Demo notification
+setTimeout(() => showNotification("🚀 Welcome to PALAMENA's Portfolio! Check out the latest projects below."), 2000);
+</script>
+</body>
+</html>

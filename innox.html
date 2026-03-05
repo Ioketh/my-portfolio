@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>INNOX Oketh | Developer Portfolio</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, Helvetica, sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:#0f172a;
+color:white;
+}
+
+/* NAVBAR */
+
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 80px;
+background:#020617;
+position:fixed;
+width:100%;
+z-index:1000;
+}
+
+nav h1{
+color:#38bdf8;
+}
+
+nav ul{
+display:flex;
+list-style:none;
+}
+
+nav ul li{
+margin-left:30px;
+}
+
+nav ul li a{
+text-decoration:none;
+color:white;
+transition:0.3s;
+}
+
+nav ul li a:hover{
+color:#38bdf8;
+}
+
+/* HERO SECTION */
+
+.hero{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+}
+
+.hero h2{
+font-size:50px;
+margin-bottom:20px;
+}
+
+.hero span{
+color:#38bdf8;
+}
+
+.hero p{
+font-size:20px;
+margin-bottom:30px;
+}
+
+.btn{
+background:#38bdf8;
+padding:12px 25px;
+border-radius:5px;
+text-decoration:none;
+color:black;
+font-weight:bold;
+}
+
+/* SECTIONS */
+
+section{
+padding:100px 10%;
+}
+
+/* ABOUT */
+
+.about{
+display:flex;
+flex-wrap:wrap;
+align-items:center;
+gap:40px;
+}
+
+.about img{
+width:250px;
+border-radius:50%;
+border:4px solid #38bdf8;
+}
+
+.about-text{
+max-width:600px;
+}
+
+/* SKILLS */
+
+.skills-container{
+margin-top:40px;
+}
+
+.skill{
+margin-bottom:20px;
+}
+
+.skill-name{
+margin-bottom:5px;
+}
+
+.skill-bar{
+background:#1e293b;
+height:10px;
+border-radius:5px;
+}
+
+.skill-fill{
+height:10px;
+background:#38bdf8;
+border-radius:5px;
+width:0;
+transition:1.5s;
+}
+
+/* PROJECTS */
+
+.projects{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+}
+
+.card{
+background:#1e293b;
+padding:20px;
+border-radius:10px;
+transition:0.4s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+box-shadow:0 10px 20px rgba(0,0,0,0.5);
+}
+
+/* CONTACT */
+
+.contact{
+text-align:center;
+}
+
+.contact a{
+display:inline-block;
+margin-top:15px;
+color:#38bdf8;
+text-decoration:none;
+}
+
+/* FOOTER */
+
+footer{
+text-align:center;
+padding:30px;
+background:#020617;
+}
+
+/* SCROLL ANIMATION */
+
+.hidden{
+opacity:0;
+transform:translateY(40px);
+transition:1s;
+}
+
+.show{
+opacity:1;
+transform:translateY(0);
+}
+
+</style>
+</head>
+
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav>
+<h1>INNOX</h1>
+<ul>
+<li><a href="#home">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+
+<h2>Hello, I'm <span>INNOX Oketh</span></h2>
+
+<p>I am a <span id="typing"></span></p>
+
+<a href="#projects" class="btn">View My Work</a>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section id="about" class="about hidden">
+
+<img src="profile.jpg">
+
+<div class="about-text">
+<h2>About Me</h2>
+
+<p>
+I am a passionate software developer specializing in
+web development, databases, and mobile applications.
+I build real world systems using Django, React,
+Ionic, PHP and modern technologies.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- SKILLS -->
+
+<section id="skills" class="hidden">
+
+<h2>Skills</h2>
+
+<div class="skills-container">
+
+<div class="skill">
+<div class="skill-name">Django</div>
+<div class="skill-bar">
+<div class="skill-fill" data-width="90%"></div>
+</div>
+</div>
+
+<div class="skill">
+<div class="skill-name">React / Ionic</div>
+<div class="skill-bar">
+<div class="skill-fill" data-width="85%"></div>
+</div>
+</div>
+
+<div class="skill">
+<div class="skill-name">MySQL / Databases</div>
+<div class="skill-bar">
+<div class="skill-fill" data-width="88%"></div>
+</div>
+</div>
+
+<div class="skill">
+<div class="skill-name">Network management</div>
+<div class="skill-bar">
+<div class="skill-fill" data-width="80%"></div>
+</div>
+</div>
+
+<div class="skill">
+<div class="skill-name">JavaScript</div>
+<div class="skill-bar">
+<div class="skill-fill" data-width="85%"></div>
+</div>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- PROJECTS -->
+
+<section id="projects" class="hidden">
+
+<h2>Projects</h2>
+
+<div class="projects">
+
+<div class="card">
+<h3>Rockset Tile Adhesive System</h3>
+<p>
+A business management system with transactions,
+customer management and reporting using Django.
+</p>
+</div>
+
+<div class="card">
+<h3>Kitchen Measurement Calculator</h3>
+<p>
+Web tool that calculates square meters and running
+meters for kitchen installation pricing.
+</p>
+</div>
+
+<div class="card">
+<h3>Library Mobile App</h3>
+<p>
+Ionic React mobile app allowing students to
+borrow books and track due dates.
+</p>
+</div>
+
+<div class="card">
+<h3>School Student Portal</h3>
+<p>
+Django system for entering student results,
+payments and report generation.
+</p>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section id="contact" class="contact hidden">
+
+<h2>Contact Me</h2>
+
+<p>Email: your@email.com</p>
+<p>Phone: +256705606889</p>
+<p>Phone: +256761073821</p>
+
+<a href="https://github.com/">GitHub</a>
+
+</section>
+
+
+<footer>
+
+<p>© 2026 INNOX Oketh | Developer Portfolio</p>
+
+</footer>
+
+
+<script>
+
+/* TYPING EFFECT */
+
+const text = [
+"Full Stack Developer",
+"Django Developer",
+"Mobile App Developer",
+"Network "
+]
+
+let count = 0
+let index = 0
+let currentText = ""
+let letter = ""
+
+function type(){
+
+if(count === text.length){
+count = 0
+}
+
+currentText = text[count]
+letter = currentText.slice(0, ++index)
+
+document.getElementById("typing").textContent = letter
+
+if(letter.length === currentText.length){
+count++
+index = 0
+}
+
+setTimeout(type,120)
+}
+
+type()
+
+
+/* SCROLL ANIMATION */
+
+const observer = new IntersectionObserver((entries)=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add("show")
+}
+})
+})
+
+document.querySelectorAll(".hidden").forEach((el)=>observer.observe(el))
+
+
+/* SKILL BAR ANIMATION */
+
+const skills = document.querySelectorAll(".skill-fill")
+
+function showSkills(){
+
+skills.forEach(skill=>{
+let width = skill.getAttribute("data-width")
+skill.style.width = width
+})
+
+}
+
+window.addEventListener("scroll",showSkills)
+
+</script>
+
+</body>
+</html>
