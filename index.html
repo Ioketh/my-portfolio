@@ -2,12 +2,12 @@
 <html lang="en" data-theme="dark">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
 <title>Okethcwinyu Innocent – Full Stack Developer</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@300;400;500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
-
+<meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline' https://www.gstatic.com https://*.firebaseio.com https://*.googleapis.com; object-src 'none';">
 </head>
 <body>
 
@@ -20,7 +20,7 @@
 <!-- NAV -->
 <nav class="navbar" id="navbar">
   <div class="nav-brand">
-    <span class="brand-bracket"></span>INNOMAX<span class="brand-bracket"></span>
+    <span class="brand-bracket">[</span>INNOVMAX<span class="brand-bracket">]</span>
   </div>
   <ul class="nav-links" id="nav-links">
     <li><a href="#hero">Home</a></li>
@@ -28,13 +28,17 @@
     <li><a href="#skills">Skills</a></li>
     <li><a href="#projects">Projects</a></li>
     <li><a href="#github">GitHub</a></li>
+    <li><a href="#news">News</a></li>
     <li><a href="#education">Education</a></li>
     <li><a href="#experience">Experience</a></li>
     <li><a href="#contact">Contact</a></li>
-    <li><a href="admin.html" class="nav-admin">Admin</a></li>
   </ul>
   <div class="nav-controls">
-    
+    <div class="visitor-badge" id="visitor-badge">
+      <span class="dot-live"></span>
+      <span id="visitor-count">0</span>
+      <span class="visitor-text">visitor<span id="visitor-plural">s</span></span>
+    </div>
     <button class="theme-toggle" id="theme-toggle" title="Toggle theme">
       <span class="toggle-icon">◐</span>
     </button>
@@ -50,40 +54,40 @@
   </div>
   <div class="hero-content">
     <div class="hero-tag animate-in">Available for hire · Uganda 🇺🇬</div>
-    <h4 class="hero-name animate-in delay-2">
-      <span>OKETHCWINYU</span>
-      <span class="name-accent">INNOCENT</span>
-    </h4>
+
+    <div class="hero-profile-row animate-in delay-1">
+      <div class="profile-image-container">
+        <img src="profile.jpg" alt="Okethcwinyu Innocent" class="profile-image"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="profile-image-fallback">IN</div>
+        <div class="profile-glow"></div>
+      </div>
+      <h1 class="hero-name">
+        <span class="hero-first">OKETHCWINYU</span>
+        <span class="hero-last name-accent">INNOCENT</span>
+      </h1>
+    </div>
+
     <div class="hero-subtitle animate-in delay-2">
       <span class="static-text">I build </span>
       <span class="typing-text" id="typing-text"></span>
       <span class="cursor-blink">|</span>
-      <div class="profile-square">
-  <img src="profile.jpg" class="pic" alt="Profile"
-       onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-  <div class="pic-fallback">IN</div>
-  <div class="frame-tl"></div>
-  <div class="frame-br"></div>
-  <div class="tag">Innovmax</div>
-</div>
     </div>
     <p class="hero-desc animate-in delay-3">
       Crafting digital experiences that merge security, scalability, and stunning UI.
       From Django backends to IoT systems — I ship products that matter.
-      the best doctor to you computer.
-      best deal in computer accessories.
-      the solution to all window softwares .
     </p>
     <div class="hero-actions animate-in delay-4">
       <a href="#projects" class="btn-primary">View Projects</a>
       <a href="#contact" class="btn-ghost">Let's Talk →</a>
+      <a href="https://wa.me/256761073821" target="_blank" class="btn-whatsapp">WhatsApp</a>
     </div>
     <div class="hero-stats animate-in delay-5">
       <div class="stat"><span class="stat-num">3+</span><span class="stat-label">Years Exp</span></div>
       <div class="stat-div"></div>
       <div class="stat"><span class="stat-num">10+</span><span class="stat-label">Projects</span></div>
       <div class="stat-div"></div>
-      <div class="stat"><span class="stat-num">5+</span><span class="stat-label">Tech Stacks</span></div>
+      <div class="stat"><span class="stat-num">7+</span><span class="stat-label">Tech Stacks</span></div>
     </div>
   </div>
   <div class="scroll-hint">
@@ -92,7 +96,7 @@
   </div>
 </section>
 
-<!-- ABOUT / PROFILE -->
+<!-- ABOUT -->
 <section class="section about-section" id="about">
   <div class="container">
     <div class="section-label reveal">01 — About</div>
@@ -101,29 +105,33 @@
         <div class="avatar-frame">
           <div class="avatar-glow"></div>
           <div class="avatar-inner">
-            <div class="avatar-placeholder">P</div>
+            <img src="profile.jpg" alt="Okethcwinyu Innocent"
+                 style="width:100%;height:100%;object-fit:cover;border-radius:50%"
+                 onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="avatar-placeholder" style="display:none">IN</div>
           </div>
           <div class="avatar-ring"></div>
-          <div class="avatar-badge">
-            <span>Available</span>
-          </div>
+          <div class="avatar-badge"><span>Available</span></div>
         </div>
       </div>
       <div class="about-info reveal delay-1">
         <h2 class="section-title">The Developer<br><em>Behind The Code</em></h2>
         <p class="about-text">
-          Hey! I'm <strong>innox</strong> — a passionate full-stack developer at Muni University studying Information Technology. I build secure, scalable web and mobile applications with a deep focus on cybersecurity and IoT integration.
+          Hey! I'm <strong>Innox</strong> — a passionate full-stack developer at Muni University studying
+          Information Technology. I build secure, scalable web and mobile applications with a deep
+          focus on cybersecurity and IoT integration.
         </p>
         <p class="about-text">
-          Beyond code, I've led teams, spoken at events, and worked hands-on in the field. I believe great software solves real problems — elegantly.
+          Beyond code, I've led teams, spoken at events, and worked hands-on in the field.
+          I believe great software solves real problems — elegantly.
         </p>
         <div class="info-grid">
           <div class="info-item"><span class="info-key">University</span><span class="info-val">Muni University</span></div>
           <div class="info-item"><span class="info-key">Program</span><span class="info-val">Information Technology</span></div>
           <div class="info-item"><span class="info-key">Email</span><span class="info-val">innoxoketh@gmail.com</span></div>
           <div class="info-item"><span class="info-key">Phone</span><span class="info-val">0761073821 / 0705606889</span></div>
-          <div class="info-item"><span class="info-key">Location</span><span class="info-val">Uganda 🇺🇬</span></div>
-          <div class="info-item"><span class="info-key">Nickname</span><span class="info-val">innox</span></div>
+          <div class="info-item"><span class="info-key">WhatsApp</span><span class="info-val"><a href="https://wa.me/256761073821" style="color: var(--accent);">Chat on WhatsApp</a></span></div>
+          <div class="info-item"><span class="info-key">GitHub</span><span class="info-val">Ioketh</span></div>
         </div>
         <a href="#contact" class="btn-primary mt-20">Get In Touch</a>
       </div>
@@ -138,52 +146,40 @@
     <h2 class="section-title reveal">Technical <em>Expertise</em></h2>
     <div class="skills-grid">
       <div class="skill-card reveal">
-        <div class="skill-header">
-          <span class="skill-icon">🐍</span>
-          <span class="skill-name">Django Backend</span>
-          <span class="skill-pct">90%</span>
-        </div>
+        <div class="skill-header"><span class="skill-icon">🐍</span><span class="skill-name">Django Backend</span><span class="skill-pct">90%</span></div>
         <div class="skill-bar"><div class="skill-fill" data-width="90"></div></div>
       </div>
       <div class="skill-card reveal delay-1">
-        <div class="skill-header">
-          <span class="skill-icon">⚛️</span>
-          <span class="skill-name">React / Ionic</span>
-          <span class="skill-pct">85%</span>
-        </div>
+        <div class="skill-header"><span class="skill-icon">⚛️</span><span class="skill-name">React / Ionic</span><span class="skill-pct">85%</span></div>
         <div class="skill-bar"><div class="skill-fill" data-width="85"></div></div>
       </div>
       <div class="skill-card reveal delay-2">
-        <div class="skill-header">
-          <span class="skill-icon">🗄️</span>
-          <span class="skill-name">Database Management</span>
-          <span class="skill-pct">88%</span>
-        </div>
+        <div class="skill-header"><span class="skill-icon">🗄️</span><span class="skill-name">Database Management</span><span class="skill-pct">88%</span></div>
         <div class="skill-bar"><div class="skill-fill" data-width="88"></div></div>
       </div>
       <div class="skill-card reveal delay-3">
-        <div class="skill-header">
-          <span class="skill-icon">🔐</span>
-          <span class="skill-name">Network Securityand management</span>
-          <span class="skill-pct">80%</span>
-        </div>
+        <div class="skill-header"><span class="skill-icon">🔐</span><span class="skill-name">Network Security & Management</span><span class="skill-pct">80%</span></div>
         <div class="skill-bar"><div class="skill-fill" data-width="80"></div></div>
       </div>
       <div class="skill-card reveal delay-1">
-        <div class="skill-header">
-          <span class="skill-icon">📱</span>
-          <span class="skill-name">Mobile Development</span>
-          <span class="skill-pct">82%</span>
-        </div>
+        <div class="skill-header"><span class="skill-icon">📱</span><span class="skill-name">Mobile Development</span><span class="skill-pct">82%</span></div>
         <div class="skill-bar"><div class="skill-fill" data-width="82"></div></div>
       </div>
       <div class="skill-card reveal delay-2">
-        <div class="skill-header">
-          <span class="skill-icon">🌐</span>
-          <span class="skill-name">IoT Systems</span>
-          <span class="skill-pct">75%</span>
-        </div>
+        <div class="skill-header"><span class="skill-icon">🌐</span><span class="skill-name">IoT Systems</span><span class="skill-pct">75%</span></div>
         <div class="skill-bar"><div class="skill-fill" data-width="75"></div></div>
+      </div>
+      <div class="skill-card reveal delay-3">
+        <div class="skill-header"><span class="skill-icon">💻</span><span class="skill-name">Software Installation</span><span class="skill-pct">95%</span></div>
+        <div class="skill-bar"><div class="skill-fill" data-width="95"></div></div>
+      </div>
+      <div class="skill-card reveal delay-1">
+        <div class="skill-header"><span class="skill-icon">📈</span><span class="skill-name">Digital Marketing</span><span class="skill-pct">78%</span></div>
+        <div class="skill-bar"><div class="skill-fill" data-width="78"></div></div>
+      </div>
+      <div class="skill-card reveal delay-2">
+        <div class="skill-header"><span class="skill-icon">🖧</span><span class="skill-name">Network Management</span><span class="skill-pct">82%</span></div>
+        <div class="skill-bar"><div class="skill-fill" data-width="82"></div></div>
       </div>
     </div>
     <div class="tech-tags reveal">
@@ -192,6 +188,7 @@
       <span class="tag">Firebase</span><span class="tag">PostgreSQL</span><span class="tag">MySQL</span>
       <span class="tag">Linux</span><span class="tag">Docker</span><span class="tag">Git</span>
       <span class="tag">Raspberry Pi</span><span class="tag">Kali Linux</span><span class="tag">REST APIs</span>
+      <span class="tag">SEO</span><span class="tag">Social Media</span><span class="tag">Network Admin</span>
     </div>
   </div>
 </section>
@@ -202,67 +199,7 @@
     <div class="section-label reveal">03 — Projects</div>
     <h2 class="section-title reveal">Featured <em>Work</em></h2>
     <div class="projects-grid" id="projects-grid">
-      <div class="loading-state">
-        <div class="spinner"></div>
-        <p>Loading projects from Firebase...</p>
-      </div>
-    </div>
-    <!-- Fallback static projects if Firebase unavailable -->
-    <div id="static-projects" class="projects-grid" style="display:none">
-      <div class="project-card reveal" data-tilt>
-        <div class="project-img-wrap">
-          <div class="project-img-placeholder">🏥</div>
-        </div>
-        <div class="project-body">
-          <div class="project-meta">Django · REST API · PostgreSQL</div>
-          <h3 class="project-title">Hospital Management System</h3>
-          <p class="project-desc">A comprehensive hospital management platform with patient records, appointment scheduling, and billing modules built with Django REST Framework.</p>
-          <div class="project-footer">
-            <div class="project-progress">
-              <span class="progress-label">Progress</span>
-              <div class="mini-bar"><div class="mini-fill" style="width:85%"></div></div>
-              <span class="progress-pct">85%</span>
-            </div>
-            <a href="https://github.com/" class="project-link">View →</a>
-          </div>
-        </div>
-      </div>
-      <div class="project-card reveal delay-1" data-tilt>
-        <div class="project-img-wrap">
-          <div class="project-img-placeholder">🔒</div>
-        </div>
-        <div class="project-body">
-          <div class="project-meta">Python · Kali Linux · Network</div>
-          <h3 class="project-title">Network Security Monitor</h3>
-          <p class="project-desc">Real-time network intrusion detection system using Python and packet analysis. Monitors traffic patterns and alerts on suspicious activity.</p>
-          <div class="project-footer">
-            <div class="project-progress">
-              <span class="progress-label">Progress</span>
-              <div class="mini-bar"><div class="mini-fill" style="width:70%"></div></div>
-              <span class="progress-pct">70%</span>
-            </div>
-            <a href="https://github.com/" class="project-link">View →</a>
-          </div>
-        </div>
-      </div>
-      <div class="project-card reveal delay-2" data-tilt>
-        <div class="project-img-wrap">
-          <div class="project-img-placeholder">📱</div>
-        </div>
-        <div class="project-body">
-          <div class="project-meta">Ionic · Firebase · TypeScript</div>
-          <h3 class="project-title">Campus Connect App</h3>
-          <p class="project-desc">A cross-platform mobile app for Muni University students to share notes, announcements, and connect with peers in real-time.</p>
-          <div class="project-footer">
-            <div class="project-progress">
-              <span class="progress-label">Progress</span>
-              <div class="mini-bar"><div class="mini-fill" style="width:60%"></div></div>
-              <span class="progress-pct">60%</span>
-            </div>
-            <a href="https://github.com/" class="project-link">View →</a>
-          </div>
-        </div>
-      </div>
+      <div class="loading-state"><div class="spinner"></div><p>Loading projects...</p></div>
     </div>
   </div>
 </section>
@@ -273,70 +210,45 @@
     <div class="section-label reveal">04 — GitHub</div>
     <h2 class="section-title reveal">Live <em>Repositories</em></h2>
     <div class="github-grid" id="github-grid">
-      <div class="loading-state">
-        <div class="spinner"></div>
-        <p>Fetching repositories...</p>
-      </div>
+      <div class="loading-state"><div class="spinner"></div><p>Fetching repositories...</p></div>
+    </div>
+    <div class="github-profile-link reveal">
+      <a href="https://github.com/Ioketh" target="_blank" class="btn-ghost">View All on GitHub →</a>
     </div>
   </div>
 </section>
 
-<!-- COMMUNICATION & LEADERSHIP -->
+<!-- NEWS SECTION -->
+<section class="section news-section" id="news">
+  <div class="container">
+    <div class="section-label reveal">05 — Tech News</div>
+    <h2 class="section-title reveal">Latest <em>Updates</em></h2>
+    <div class="news-grid" id="news-grid">
+      <div class="loading-state"><div class="spinner"></div><p>Loading tech news...</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- LEADERSHIP -->
 <section class="section leadership-section" id="leadership">
   <div class="container">
-    <div class="section-label reveal">05 — Leadership</div>
+    <div class="section-label reveal">06 — Leadership</div>
     <h2 class="section-title reveal">Communication & <em>Leadership</em></h2>
     <div class="two-col-grid">
       <div class="reveal">
         <h3 class="sub-heading">Communication Experience</h3>
         <div class="timeline">
-          <div class="tl-item">
-            <div class="tl-dot"></div>
-            <div class="tl-content">
-              <h4>Public Speaker — Tech Seminars</h4>
-              <p>Delivered presentations on cybersecurity awareness and IoT trends at university seminars and community events.</p>
-            </div>
-          </div>
-          <div class="tl-item">
-            <div class="tl-dot"></div>
-            <div class="tl-content">
-              <h4>Technical Workshop Facilitator</h4>
-              <p>Facilitated hands-on workshops on web development basics for first-year IT students at Muni University.</p>
-            </div>
-          </div>
-          <div class="tl-item">
-            <div class="tl-dot"></div>
-            <div class="tl-content">
-              <h4>Community Outreach Presenter</h4>
-              <p>Represented the IT department in community digital literacy programs across the West Nile region.</p>
-            </div>
-          </div>
+          <div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><h4>Public Speaker — Tech Seminars</h4><p>Delivered presentations on cybersecurity awareness and IoT trends at university seminars and community events.</p></div></div>
+          <div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><h4>Technical Workshop Facilitator</h4><p>Facilitated hands-on workshops on web development basics for first-year IT students at Muni University.</p></div></div>
+          <div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><h4>Community Outreach Presenter</h4><p>Represented the IT department in community digital literacy programs across the West Nile region.</p></div></div>
         </div>
       </div>
       <div class="reveal delay-1">
         <h3 class="sub-heading">Leadership Roles</h3>
         <div class="timeline">
-          <div class="tl-item">
-            <div class="tl-dot accent"></div>
-            <div class="tl-content">
-              <h4>IT Club President — Muni University</h4>
-              <p>Led a team of 50+ student developers, organized hackathons, and coordinated industry partnerships.</p>
-            </div>
-          </div>
-          <div class="tl-item">
-            <div class="tl-dot accent"></div>
-            <div class="tl-content">
-              <h4>Project Team Lead</h4>
-              <p>Managed cross-functional teams for software development projects, ensuring delivery within scope and timeline.</p>
-            </div>
-          </div>
-          <div class="tl-item">
-            <div class="tl-dot accent"></div>
-            <div class="tl-content">
-              <h4>Peer Mentor — Computer Science Students</h4>
-              <p>Mentored junior students in programming fundamentals, career guidance, and academic excellence.</p>
-            </div>
-          </div>
+          <div class="tl-item"><div class="tl-dot accent"></div><div class="tl-content"><h4>IT Club President — Muni University</h4><p>Led a team of 50+ student developers, organized hackathons, and coordinated industry partnerships.</p></div></div>
+          <div class="tl-item"><div class="tl-dot accent"></div><div class="tl-content"><h4>Project Team Lead</h4><p>Managed cross-functional teams for software development projects, ensuring delivery within scope and timeline.</p></div></div>
+          <div class="tl-item"><div class="tl-dot accent"></div><div class="tl-content"><h4>Peer Mentor — Computer Science Students</h4><p>Mentored junior students in programming fundamentals, career guidance, and academic excellence.</p></div></div>
         </div>
       </div>
     </div>
@@ -346,127 +258,26 @@
 <!-- EDUCATION -->
 <section class="section education-section" id="education">
   <div class="container">
-    <div class="section-label reveal">06 — Education</div>
+    <div class="section-label reveal">07 — Education</div>
     <h2 class="section-title reveal">Academic <em>Journey</em></h2>
     <div class="edu-grid">
-      <div class="edu-card reveal">
-        <div class="edu-icon">🎓</div>
-        <div class="edu-body">
-          <div class="edu-period">2022 – Present</div>
-          <h3>Bachelor of Science in Information Technology</h3>
-          <p class="edu-inst">Muni University, Uganda</p>
-          <p>Specializing in software engineering, network security, database systems, and IoT development.</p>
-        </div>
-      </div>
-      <div class="edu-card reveal delay-1">
-        <div class="edu-icon">📘</div>
-        <div class="edu-body">
-          <div class="edu-period">2019 – 2021</div>
-          <h3>Uganda Advanced Certificate of Education (UACE)</h3>
-          <p class="edu-inst">Secondary School, Uganda</p>
-          <p>Studied Physics, Mathematics, and Computer Science with distinction. Strong foundation in logical reasoning and problem-solving.</p>
-        </div>
-      </div>
-      <div class="edu-card reveal delay-2">
-        <div class="edu-icon">📗</div>
-        <div class="edu-body">
-          <div class="edu-period">2015 – 2018</div>
-          <h3>Uganda Certificate of Education (UCE)</h3>
-          <p class="edu-inst">Secondary School, Uganda</p>
-          <p>Completed O-Level with at wost C3 in sciences, mathematics, and languages.</p>
-        </div>
-      </div>
-      <div class="edu-card reveal delay-3">
-        <div class="edu-icon">🏫</div>
-        <div class="edu-body">
-          <div class="edu-period">2006 – 2014</div>
-          <h3>Primary Education</h3>
-          <p class="edu-inst">Primary School, Uganda</p>
-          <p>Completed Primary Leaving Examinations (PLE) with strong academic performance.</p>
-        </div>
-      </div>
-      <div class="edu-card reveal delay-1">
-        <div class="edu-icon">📜</div>
-        <div class="edu-body">
-          <div class="edu-period">Certificates</div>
-          <h3>Professional Certifications</h3>
-          <p class="edu-inst">Online Platforms</p>
-          <p>Django REST Framework · Firebase Development · Network Security Fundamentals · IoT with Raspberry Pi · Cisco Packet Tracer</p>
-        </div>
-      </div>
+      <div class="edu-card reveal"><div class="edu-icon">🎓</div><div class="edu-body"><div class="edu-period">2022 – Present</div><h3>Bachelor of Science in Information Technology</h3><p class="edu-inst">Muni University, Uganda</p><p>Specializing in software engineering, network security, database systems, and IoT development.</p></div></div>
+      <div class="edu-card reveal delay-1"><div class="edu-icon">📘</div><div class="edu-body"><div class="edu-period">2019 – 2021</div><h3>Uganda Advanced Certificate of Education (UACE)</h3><p class="edu-inst">Secondary School, Uganda</p><p>Studied Physics, Mathematics, and Computer Science with distinction.</p></div></div>
+      <div class="edu-card reveal delay-2"><div class="edu-icon">📗</div><div class="edu-body"><div class="edu-period">2015 – 2018</div><h3>Uganda Certificate of Education (UCE)</h3><p class="edu-inst">Secondary School, Uganda</p><p>Completed O-Level with strong performance in sciences, mathematics, and languages.</p></div></div>
+      <div class="edu-card reveal delay-3"><div class="edu-icon">📜</div><div class="edu-body"><div class="edu-period">Certificates</div><h3>Professional Certifications</h3><p class="edu-inst">Online Platforms</p><p>Django REST Framework · Firebase Development · Network Security Fundamentals · IoT with Raspberry Pi · Cisco Packet Tracer · Google Digital Marketing</p></div></div>
     </div>
   </div>
 </section>
 
-<!-- WORK EXPERIENCE -->
+<!-- EXPERIENCE -->
 <section class="section experience-section" id="experience">
   <div class="container">
-    <div class="section-label reveal">07 — Experience</div>
+    <div class="section-label reveal">08 — Experience</div>
     <h2 class="section-title reveal">Work <em>Experience</em></h2>
     <div class="exp-list">
-      <div class="exp-item reveal">
-        <div class="exp-year">2021–2022</div>
-        <div class="exp-body">
-          <h3>Marble & Granite Installer</h3>
-          <p class="exp-company">Super Terrazal Uganda Ltd</p>
-          <p>Performed precision marble and granite installations for commercial and residential clients. Developed strong attention to detail, project management skills, and client communication.</p>
-          <div class="exp-tags"><span>Project Management</span><span>Precision Work</span><span>Client Relations</span></div>
-        </div>
-      </div>
-      <div class="exp-item reveal delay-1">
-        <div class="exp-year">2020–2021</div>
-        <div class="exp-body">
-          <h3>Marble & Granite Technician</h3>
-          <p class="exp-company">Sunventures Marble & Granite</p>
-          <p>Worked on high-end granite installation projects. Collaborated with teams to deliver quality finishes on time and within budget across multiple sites.</p>
-          <div class="exp-tags"><span>Teamwork</span><span>Quality Control</span><span>Site Management</span></div>
-        </div>
-      </div>
-      <div class="exp-item reveal delay-2">
-        <div class="exp-year">2019–2020</div>
-        <div class="exp-body">
-          <h3>Junior Installation Technician</h3>
-          <p class="exp-company">Noordin Investments Uganda</p>
-          <p>Assisted senior technicians in marble and terrazal installations. Gained hands-on experience in construction materials and precision measurement techniques.</p>
-          <div class="exp-tags"><span>Technical Skills</span><span>Installation</span><span>Fieldwork</span></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- REFERENCES -->
-<section class="section references-section" id="references">
-  <div class="container">
-    <div class="section-label reveal">08 — References</div>
-    <h2 class="section-title reveal">Professional <em>References</em></h2>
-    <div class="ref-grid">
-      <div class="ref-card reveal">
-        <div class="ref-avatar">DR</div>
-        <div class="ref-info">
-          <h4>Dr. TUBAN </h4>        <p class="ref-title">Head of IT Department</p>
-          <p class="ref-inst">Muni University</p>
-          <p class="ref-contact">📧 Available upon request</p>
-        </div>
-      </div>
-      <div class="ref-card reveal delay-1">
-        <div class="ref-avatar">SM</div>
-        <div class="ref-info">
-          <h4>Site Manager</h4>
-          <p class="ref-title">Operations Manager</p>
-          <p class="ref-inst">Super Terrazal Uganda Ltd</p>
-          <p class="ref-contact">📧 Available upon request</p>
-        </div>
-      </div>
-      <div class="ref-card reveal delay-2">
-        <div class="ref-avatar">PM</div>
-        <div class="ref-info">
-          <h4>Project Supervisor</h4>
-          <p class="ref-title">Senior Engineer</p>
-          <p class="ref-inst">Sunventures Marble & Granite</p>
-          <p class="ref-contact">📧 Available upon request</p>
-        </div>
-      </div>
+      <div class="exp-item reveal"><div class="exp-year">2021–2022</div><div class="exp-body"><h3>Marble & Granite Installer</h3><p class="exp-company">Super Terrazal Uganda Ltd</p><p>Performed precision marble and granite installations for commercial and residential clients. Developed strong attention to detail, project management skills, and client communication.</p><div class="exp-tags"><span>Project Management</span><span>Precision Work</span><span>Client Relations</span></div></div></div>
+      <div class="exp-item reveal delay-1"><div class="exp-year">2020–2021</div><div class="exp-body"><h3>Marble & Granite Technician</h3><p class="exp-company">Sunventures Marble & Granite</p><p>Worked on high-end granite installation projects. Collaborated with teams to deliver quality finishes on time and within budget across multiple sites.</p><div class="exp-tags"><span>Teamwork</span><span>Quality Control</span><span>Site Management</span></div></div></div>
+      <div class="exp-item reveal delay-2"><div class="exp-year">2019–2020</div><div class="exp-body"><h3>Junior Installation Technician</h3><p class="exp-company">Noordin Investments Uganda</p><p>Assisted senior technicians in marble and terrazal installations. Gained hands-on experience in construction materials and precision measurement techniques.</p><div class="exp-tags"><span>Technical Skills</span><span>Installation</span><span>Fieldwork</span></div></div></div>
     </div>
   </div>
 </section>
@@ -480,49 +291,20 @@
       <div class="contact-info reveal">
         <p class="contact-lead">Have a project in mind or want to collaborate? I'd love to hear from you.</p>
         <div class="contact-items">
-          <div class="contact-item">
-            <span class="contact-icon">📧</span>
-            <div>
-              <div class="contact-label">Email</div>
-              <a href="mailto:innoxoketh@gmail.com">innoxoketh@gmail.com</a>
-            </div>
-          </div>
-          <div class="contact-item">
-            <span class="contact-icon">📱</span>
-            <div>
-              <div class="contact-label">Phone</div>
-              <a href="tel:+256761073821">+256 761 073 821</a><br>
-              <a href="tel:+256705606889">+256 705 606 889</a>
-            </div>
-          </div>
-          <div class="contact-item">
-            <span class="contact-icon">📍</span>
-            <div>
-              <div class="contact-label">Location</div>
-              <span>Uganda, East Africa</span>
-            </div>
-          </div>
+          <div class="contact-item"><span class="contact-icon">📧</span><div><div class="contact-label">Email</div><a href="mailto:innoxoketh@gmail.com">innoxoketh@gmail.com</a></div></div>
+          <div class="contact-item"><span class="contact-icon">📱</span><div><div class="contact-label">Phone</div><a href="tel:+256761073821">+256 761 073 821</a><br><a href="tel:+256705606889">+256 705 606 889</a></div></div>
+          <div class="contact-item"><span class="contact-icon">💬</span><div><div class="contact-label">WhatsApp</div><a href="https://wa.me/256761073821" target="_blank">Chat on WhatsApp</a></div></div>
+          <div class="contact-item"><span class="contact-icon">📍</span><div><div class="contact-label">Location</div><span>Uganda, East Africa</span></div></div>
+          <div class="contact-item"><span class="contact-icon">🐙</span><div><div class="contact-label">GitHub</div><a href="https://github.com/Ioketh" target="_blank">github.com/Ioketh</a></div></div>
         </div>
       </div>
       <form class="contact-form reveal delay-1" id="contact-form">
         <div class="form-row">
-          <div class="form-group">
-            <label>Name</label>
-            <input type="text" id="cf-name" placeholder="Your name" required>
-          </div>
-          <div class="form-group">
-            <label>Email</label>
-            <input type="email" id="cf-email" placeholder="your@email.com" required>
-          </div>
+          <div class="form-group"><label>Name</label><input type="text" id="cf-name" placeholder="Your name" required></div>
+          <div class="form-group"><label>Email</label><input type="email" id="cf-email" placeholder="your@email.com" required></div>
         </div>
-        <div class="form-group">
-          <label>Subject</label>
-          <input type="text" id="cf-subject" placeholder="Project collaboration, hiring...">
-        </div>
-        <div class="form-group">
-          <label>Message</label>
-          <textarea id="cf-message" rows="5" placeholder="Tell me about your project..." required></textarea>
-        </div>
+        <div class="form-group"><label>Subject</label><input type="text" id="cf-subject" placeholder="Project collaboration, hiring..."></div>
+        <div class="form-group"><label>Message</label><textarea id="cf-message" rows="5" placeholder="Tell me about your project..." required></textarea></div>
         <button type="submit" class="btn-primary w-full">Send Message →</button>
         <div id="form-status" class="form-status"></div>
       </form>
@@ -535,456 +317,996 @@
   <div class="container">
     <div class="footer-inner">
       <div class="footer-brand">
-        <span class="brand-bracket"></span>innovmax<span class="brand-bracket"></span>
+        <span class="brand-bracket">[</span>INNOVMAX<span class="brand-bracket">]</span>
         <p>Building the future, one commit at a time.</p>
       </div>
       <div class="footer-links">
         <a href="mailto:innoxoketh@gmail.com">Email</a>
         <a href="tel:+256761073821">Phone</a>
-        <a href="admin.html">Admin</a>
+        <a href="https://wa.me/256761073821" target="_blank">WhatsApp</a>
+        <a href="https://github.com/Ioketh" target="_blank">GitHub</a>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>© 2024 Okethcwinyu Innocent (innovmax). Built with ❤️ in Uganda.</p>
+      <p>© 2024 Okethcwinyu Innocent (Innovmax). Built with ❤️ in Uganda.</p>
     </div>
   </div>
 </footer>
 
 <!-- AI CHATBOT -->
 <div class="chatbot-fab" id="chatbot-fab">
-  <span class="chatbot-icon">💬</span>
+  <span class="chatbot-icon">🤖</span>
   <span class="chatbot-badge" id="chat-badge">1</span>
 </div>
-
 <div class="chatbot-window" id="chatbot-window">
   <div class="chat-header">
-    <div class="chat-avatar">P</div>
+    <div class="chat-avatar">AI</div>
     <div>
-      <div class="chat-name">innovmax AI</div>
-      <div class="chat-status">● Online</div>
+      <div class="chat-name">Innovmax AI Assistant</div>
+      <div class="chat-status">● Online - Tech Support</div>
     </div>
     <button class="chat-close" id="chat-close">✕</button>
   </div>
   <div class="chat-messages" id="chat-messages">
     <div class="chat-msg bot">
-      <div class="msg-bubble">Hey! 👋 I'm INNOX's AI assistant. Ask me anything about his skills, projects, or experience!</div>
+      <div class="msg-bubble">👋 Hi! I'm your tech assistant. I can help with:
+        • Software installation issues
+        • Network problems
+        • Development questions
+        • Digital marketing advice
+        • Project inquiries
+        
+        How can I help you today?</div>
     </div>
   </div>
   <div class="chat-input-wrap">
-    <input type="text" id="chat-input" placeholder="Ask me anything..." autocomplete="off">
+    <input type="text" id="chat-input" placeholder="Ask me anything about tech..." autocomplete="off">
     <button id="chat-send">→</button>
+  </div>
+  <div class="chat-quick-actions">
+    <button class="quick-action" data-question="How to install Python?">🐍 Python</button>
+    <button class="quick-action" data-question="Network setup help">🌐 Network</button>
+    <button class="quick-action" data-question="Website development cost">💻 Web Dev</button>
+    <button class="quick-action" data-question="Contact Innox">📞 Contact</button>
   </div>
 </div>
 
 <!-- Firebase SDK -->
 <script type="module">
-  import { initializeApp } from " https://firebase.google.com/docs/web/setup#available-libraries";
-  import { getFirestore, collection, getDocs, addDoc, doc, updateDoc, onSnapshot, serverTimestamp, increment, setDoc, getDoc }
-    from " https://firebase.google.com/docs/web/setup#available-libraries";
-  import { getAuth } from " https://firebase.google.com/docs/web/setup#available-libraries";
+  // Import Firebase
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+  import { getFirestore, collection, getDocs, addDoc, doc, onSnapshot, serverTimestamp, increment, setDoc, query, orderBy, limit, where, updateDoc, deleteDoc } 
+    from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-analytics.js";
 
-const firebaseConfig = {
-  apiKey: "AIzaSyBFpU7NldfS_b4pCjhStG-nkNhMI_W1uIk",
-  authDomain: "portfolio-profile-16519.firebaseapp.com",
-  projectId: "portfolio-profile-16519",
-  storageBucket: "portfolio-profile-16519.firebasestorage.app",
-  messagingSenderId: "486886015305",
-  appId: "1:486886015305:web:23d05f3ac64eab483f1a98",
-  measurementId: "G-K01957ND5G"
-};
+  // Firebase Configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyBFpU7NldfS_b4pCjhStG-nkNhMI_W1uIk",
+    authDomain: "portfolio-profile-16519.firebaseapp.com",
+    projectId: "portfolio-profile-16519",
+    storageBucket: "portfolio-profile-16519.firebasestorage.app",
+    messagingSenderId: "486886015305",
+    appId: "1:486886015305:web:23d05f3ac64eab483f1a98",
+    measurementId: "G-K01957ND5G"
+  };
 
-  let db;
+  // Initialize Firebase
+  let app, db, analytics;
+  let firebaseAvailable = false;
+
   try {
-    const app = initializeApp(firebaseConfig);
+    app = initializeApp(firebaseConfig);
     db = getFirestore(app);
-    window._db = db;
-    initFirebase(db);
-  } catch(e) {
-    console.warn("Firebase init failed, using static data:", e);
-    document.getElementById("static-projects").style.display = "grid";
-    document.getElementById("projects-grid").style.display = "none";
+    analytics = getAnalytics(app);
+    firebaseAvailable = true;
+    console.log("Firebase initialized successfully");
+    
+    // Load data from Firebase
+    loadProjects();
+    loadNews();
+    trackVisitor();
+    listenForNotifications();
+  } catch (error) {
+    console.warn("Firebase initialization failed, using fallback data:", error);
+    showFallbackProjects();
+    showFallbackNews();
+    initLocalTracking();
   }
 
-  async function initFirebase(db) {
-    await trackVisitor(db);
-    await loadProjects(db);
-    loadNotifications(db);
-    listenVisitorCount(db);
-  }
-
-  async function trackVisitor(db) {
+  // Track visitor
+  async function trackVisitor() {
+    if (!firebaseAvailable) return;
+    
     try {
-      const ref = doc(db, "analytics", "visitors");
-      await setDoc(ref, { totalVisitors: increment(1) }, { merge: true });
-    } catch(e) { console.warn("Analytics:", e); }
-  }
-
-  function listenVisitorCount(db) {
-    try {
-      const ref = doc(db, "analytics", "visitors");
-      onSnapshot(ref, snap => {
-        if(snap.exists()) {
-          document.getElementById("visitor-count").textContent = snap.data().totalVisitors || 0;
+      const visitorRef = doc(db, "analytics", "visitors");
+      await setDoc(visitorRef, { totalVisitors: increment(1) }, { merge: true });
+      
+      // Track this visit
+      await addDoc(collection(db, "visitors"), {
+        timestamp: serverTimestamp(),
+        page: window.location.pathname,
+        userAgent: navigator.userAgent,
+        language: navigator.language,
+        referrer: document.referrer || 'direct'
+      });
+      
+      // Listen to visitor count
+      onSnapshot(visitorRef, (snap) => {
+        if (snap.exists()) {
+          const count = snap.data().totalVisitors || 0;
+          updateVisitorCount(count);
         }
       });
-    } catch(e) {}
-  }
-
-  async function loadProjects(db) {
-    const grid = document.getElementById("projects-grid");
-    try {
-      const snap = await getDocs(collection(db, "projects"));
-      if(snap.empty) {
-        grid.style.display = "none";
-        document.getElementById("static-projects").style.display = "grid";
-        return;
-      }
-      grid.innerHTML = "";
-      snap.forEach(docSnap => {
-        const p = docSnap.data();
-        const card = createProjectCard(p, docSnap.id);
-        grid.appendChild(card);
-      });
-      initTiltCards();
-    } catch(e) {
-      grid.style.display = "none";
-      document.getElementById("static-projects").style.display = "grid";
+    } catch (error) {
+      console.warn("Visitor tracking failed:", error);
     }
   }
 
-  function createProjectCard(p, id) {
+  function initLocalTracking() {
+    let visitors = localStorage.getItem('visitorCount') || 0;
+    visitors = parseInt(visitors) + 1;
+    localStorage.setItem('visitorCount', visitors);
+    updateVisitorCount(visitors);
+  }
+
+  function updateVisitorCount(count) {
+    const visitorEl = document.getElementById('visitor-count');
+    if (visitorEl) {
+      visitorEl.textContent = count;
+      const pluralEl = document.getElementById('visitor-plural');
+      if (pluralEl) pluralEl.textContent = count === 1 ? '' : 's';
+    }
+  }
+
+  // Listen for notifications
+  function listenForNotifications() {
+    if (!firebaseAvailable) return;
+    
+    try {
+      onSnapshot(collection(db, "notifications"), (snap) => {
+        snap.docChanges().forEach(change => {
+          if (change.type === "added") {
+            showNotification(change.doc.data().message);
+          }
+        });
+      });
+    } catch (error) {
+      console.warn("Notification listener failed:", error);
+    }
+  }
+
+  // Load Projects from Firebase
+  async function loadProjects() {
+    const grid = document.getElementById("projects-grid");
+    
+    if (!firebaseAvailable) {
+      showFallbackProjects();
+      initTiltCards();
+      return;
+    }
+
+    try {
+      const q = query(collection(db, "projects"), orderBy("createdAt", "desc"));
+      const snap = await getDocs(q);
+      
+      if (!snap.empty) {
+        grid.innerHTML = "";
+        snap.forEach(doc => {
+          const p = { id: doc.id, ...doc.data() };
+          grid.appendChild(createProjectCard(p));
+        });
+      } else {
+        showFallbackProjects();
+      }
+    } catch (error) {
+      console.warn("Error loading projects from Firebase:", error);
+      showFallbackProjects();
+    }
+    
+    initTiltCards();
+  }
+
+  function showFallbackProjects() {
+    const grid = document.getElementById("projects-grid");
+    grid.innerHTML = `
+      <div class="project-card reveal" data-tilt>
+        <div class="project-img-wrap">
+          <div class="project-img-placeholder">🪨</div>
+        </div>
+        <div class="project-body">
+          <div class="project-meta">Django · PostgreSQL · Vercel</div>
+          <h3 class="project-title">MM Granite & Marble Solution</h3>
+          <p class="project-desc">A professional website for a granite and marble installation company showcasing their work, services, and project portfolio.</p>
+          <div class="project-footer">
+            <div class="project-progress">
+              <span class="progress-label">Status</span>
+              <div class="mini-bar"><div class="mini-fill" style="width:100%"></div></div>
+              <span class="progress-pct">Live</span>
+            </div>
+            <a href="https://mm-granite-and-marble-solution.vercel.app/" class="project-link" target="_blank">Visit →</a>
+          </div>
+        </div>
+      </div>
+      <div class="project-card reveal delay-1" data-tilt>
+        <div class="project-img-wrap">
+          <div class="project-img-placeholder">📚</div>
+        </div>
+        <div class="project-body">
+          <div class="project-meta">React · Node.js · MongoDB</div>
+          <h3 class="project-title">Muni Library Management App</h3>
+          <p class="project-desc">A comprehensive library management system for Muni University with book tracking, user management, and automated notifications.</p>
+          <div class="project-footer">
+            <div class="project-progress">
+              <span class="progress-label">Progress</span>
+              <div class="mini-bar"><div class="mini-fill" style="width:75%"></div></div>
+              <span class="progress-pct">75%</span>
+            </div>
+            <a href="https://github.com/Ioketh" class="project-link" target="_blank">View →</a>
+          </div>
+        </div>
+      </div>
+      <div class="project-card reveal delay-2" data-tilt>
+        <div class="project-img-wrap">
+          <div class="project-img-placeholder">🏥</div>
+        </div>
+        <div class="project-body">
+          <div class="project-meta">Django · REST API · PostgreSQL</div>
+          <h3 class="project-title">Hospital Management System</h3>
+          <p class="project-desc">A comprehensive hospital management platform with patient records, appointment scheduling, and billing modules built with Django REST Framework.</p>
+          <div class="project-footer">
+            <div class="project-progress">
+              <span class="progress-label">Progress</span>
+              <div class="mini-bar"><div class="mini-fill" style="width:85%"></div></div>
+              <span class="progress-pct">85%</span>
+            </div>
+            <a href="https://github.com/Ioketh" class="project-link" target="_blank">View →</a>
+          </div>
+        </div>
+      </div>
+    `;
+  }
+
+  function createProjectCard(p) {
     const div = document.createElement("div");
     div.className = "project-card reveal";
     div.setAttribute("data-tilt", "");
+    
     const progress = p.progress || 0;
-    const imgHtml = p.image
-      ? `<img src="${p.image}" alt="${p.name}" style="width:100%;height:100%;object-fit:cover;">`
+    const technologies = p.technologies ? (Array.isArray(p.technologies) ? p.technologies.join(" · ") : p.technologies) : "Tech Stack";
+    const projectLink = p.project_link || p.link || "#";
+    const projectName = p.name || "Project";
+    const description = p.description || "No description available.";
+    
+    const imageHtml = p.image 
+      ? `<img src="${p.image}" alt="${projectName}" style="width:100%;height:100%;object-fit:cover;" 
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+         <div class="project-img-placeholder" style="display:none">🚀</div>`
       : `<div class="project-img-placeholder">🚀</div>`;
+    
     div.innerHTML = `
-      <div class="project-img-wrap">${imgHtml}</div>
+      <div class="project-img-wrap">${imageHtml}</div>
       <div class="project-body">
-        <div class="project-meta">${formatDate(p.createdAt)}</div>
-        <h3 class="project-title">${p.name || "Project"}</h3>
-        <p class="project-desc">${p.description || ""}</p>
+        <div class="project-meta">${technologies}</div>
+        <h3 class="project-title">${projectName}</h3>
+        <p class="project-desc">${description}</p>
         <div class="project-footer">
           <div class="project-progress">
             <span class="progress-label">Progress</span>
             <div class="mini-bar"><div class="mini-fill" style="width:${progress}%"></div></div>
             <span class="progress-pct">${progress}%</span>
           </div>
-          ${p.link ? `<a href="${p.link}" class="project-link" target="_blank">View →</a>` : ""}
+          <a href="${projectLink}" class="project-link" target="_blank">View →</a>
         </div>
       </div>`;
     return div;
   }
 
-  function formatDate(ts) {
-    if (!ts) return "";
-    const d = ts.toDate ? ts.toDate() : new Date(ts);
-    return d.toLocaleDateString("en-US", { year:"numeric", month:"short" });
-  }
+  // Load News from Firebase
+  async function loadNews() {
+    const grid = document.getElementById("news-grid");
+    
+    if (!firebaseAvailable) {
+      showFallbackNews();
+      return;
+    }
 
-  function loadNotifications(db) {
     try {
-      onSnapshot(collection(db, "notifications"), snap => {
-        snap.docChanges().forEach(change => {
-          if(change.type === "added") {
-            const data = change.doc.data();
-            showNotification(data.message);
-          }
+      const q = query(collection(db, "news"), orderBy("created_at", "desc"), limit(6));
+      const snap = await getDocs(q);
+      
+      if (!snap.empty) {
+        grid.innerHTML = "";
+        snap.forEach(doc => {
+          const n = { id: doc.id, ...doc.data() };
+          grid.appendChild(createNewsCard(n));
         });
-      });
-    } catch(e) {}
+      } else {
+        showFallbackNews();
+      }
+    } catch (error) {
+      console.warn("Error loading news:", error);
+      showFallbackNews();
+    }
   }
 
-  // Contact form → Firebase
+  function showFallbackNews() {
+    const grid = document.getElementById("news-grid");
+    grid.innerHTML = `
+      <div class="news-card reveal">
+        <div class="news-icon">🐍</div>
+        <div class="news-content">
+          <h3>Django 5.0 Released</h3>
+          <p>New async ORM capabilities and improved performance for web applications. Perfect for building scalable backends.</p>
+          <div class="news-meta">
+            <span class="news-category">Technology</span>
+            <span class="news-date">March 2024</span>
+          </div>
+        </div>
+      </div>
+      <div class="news-card reveal delay-1">
+        <div class="news-icon">⚛️</div>
+        <div class="news-content">
+          <h3>React 19 Features</h3>
+          <p>Server components and improved hydration for better performance in modern web applications.</p>
+          <div class="news-meta">
+            <span class="news-category">Framework</span>
+            <span class="news-date">February 2024</span>
+          </div>
+        </div>
+      </div>
+      <div class="news-card reveal delay-2">
+        <div class="news-icon">🔐</div>
+        <div class="news-content">
+          <h3>New Security Standards</h3>
+          <p>OWASP updates guidelines for web application security in 2024 with focus on API security.</p>
+          <div class="news-meta">
+            <span class="news-category">Security</span>
+            <span class="news-date">January 2024</span>
+          </div>
+        </div>
+      </div>
+    `;
+  }
+
+  function createNewsCard(n) {
+    const div = document.createElement("div");
+    div.className = "news-card reveal";
+    
+    const date = n.created_at ? new Date(n.created_at.seconds * 1000).toLocaleDateString("en-US", { 
+      year: "numeric", month: "short", day: "numeric" 
+    }) : "Recent";
+    
+    const category = n.category || "Technology";
+    const title = n.title || "Tech Update";
+    const description = n.description || "";
+    const link = n.link || "#";
+    
+    const imageHtml = n.image 
+      ? `<img src="${n.image}" alt="${title}" style="width:100%;height:100%;object-fit:cover;" 
+           onerror="this.style.display='none';this.parentElement.innerHTML='📰'">`
+      : '📰';
+    
+    div.innerHTML = `
+      <div class="news-icon">${imageHtml}</div>
+      <div class="news-content">
+        <h3>${title}</h3>
+        <p>${description}</p>
+        <div class="news-meta">
+          <span class="news-category">${category}</span>
+          <span class="news-date">${date}</span>
+        </div>
+        ${link !== '#' ? `<a href="${link}" target="_blank" class="news-link">Read more →</a>` : ""}
+      </div>
+    `;
+    return div;
+  }
+
+  // Contact form submission
   document.getElementById("contact-form").addEventListener("submit", async (e) => {
     e.preventDefault();
     const status = document.getElementById("form-status");
-    const btn = e.target.querySelector("button");
+    const btn = e.target.querySelector("button[type='submit']");
+    
     btn.textContent = "Sending...";
     btn.disabled = true;
+    
     const msgData = {
       name: document.getElementById("cf-name").value,
       email: document.getElementById("cf-email").value,
       subject: document.getElementById("cf-subject").value,
       message: document.getElementById("cf-message").value,
-      createdAt: serverTimestamp ? serverTimestamp() : new Date()
+      timestamp: new Date().toISOString(),
+      page: window.location.pathname,
+      userAgent: navigator.userAgent,
+      read: false,
+      source: 'contact_form'
     };
+    
     try {
-      if(db) await addDoc(collection(db, "messages"), msgData);
+      if (firebaseAvailable) {
+        await addDoc(collection(db, "messages"), {
+          ...msgData,
+          createdAt: serverTimestamp()
+        });
+        
+        // Show success notification
+        showNotification("✅ Message sent successfully! I'll get back to you soon.");
+      } else {
+        // Store in localStorage as fallback
+        const messages = JSON.parse(localStorage.getItem('contactMessages') || '[]');
+        messages.push({ id: Date.now().toString(), ...msgData });
+        localStorage.setItem('contactMessages', JSON.stringify(messages));
+      }
+      
       status.textContent = "✅ Message sent! I'll get back to you soon.";
       status.className = "form-status success";
       e.target.reset();
-    } catch(err) {
+    } catch (err) {
+      console.error("Error sending message:", err);
       status.textContent = "❌ Error sending. Please email directly: innoxoketh@gmail.com";
       status.className = "form-status error";
     }
+    
     btn.textContent = "Send Message →";
     btn.disabled = false;
   });
 
-  // AI Chatbot
-  window._db = db;
-  document.getElementById("chat-send").addEventListener("click", sendChatMsg);
-  document.getElementById("chat-input").addEventListener("keydown", e => {
-    if(e.key === "Enter") sendChatMsg();
-  });
-
-  async function sendChatMsg() {
-    const input = document.getElementById("chat-input");
-    const msg = input.value.trim();
-    if(!msg) return;
-    input.value = "";
-    appendMsg(msg, "user");
-    const typing = appendMsg("...", "bot");
-    try {
-      const reply = await getAIResponse(msg);
-      typing.querySelector(".msg-bubble").textContent = reply;
-    } catch(e) {
-      typing.querySelector(".msg-bubble").textContent = "Sorry, I'm having trouble right now. Email innoxoketh@gmail.com for direct contact!";
-    }
-    if(db) {
+  // AI Chatbot functionality
+  const chatbot = {
+    init() {
+      this.fab = document.getElementById("chatbot-fab");
+      this.window = document.getElementById("chatbot-window");
+      this.closeBtn = document.getElementById("chat-close");
+      this.sendBtn = document.getElementById("chat-send");
+      this.input = document.getElementById("chat-input");
+      this.messages = document.getElementById("chat-messages");
+      this.badge = document.getElementById("chat-badge");
+      
+      this.bindEvents();
+      this.addQuickActions();
+    },
+    
+    bindEvents() {
+      this.fab.addEventListener("click", () => this.toggle());
+      this.closeBtn.addEventListener("click", () => this.close());
+      this.sendBtn.addEventListener("click", () => this.sendMessage());
+      this.input.addEventListener("keydown", (e) => {
+        if (e.key === "Enter") this.sendMessage();
+      });
+    },
+    
+    addQuickActions() {
+      document.querySelectorAll('.quick-action').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const question = btn.dataset.question;
+          this.input.value = question;
+          this.sendMessage();
+        });
+      });
+    },
+    
+    toggle() {
+      this.window.classList.toggle("open");
+      this.badge.style.display = "none";
+      if (this.window.classList.contains("open")) {
+        this.input.focus();
+      }
+    },
+    
+    close() {
+      this.window.classList.remove("open");
+    },
+    
+    async sendMessage() {
+      const msg = this.input.value.trim();
+      if (!msg) return;
+      
+      this.input.value = "";
+      this.appendMessage(msg, "user");
+      
+      // Show typing indicator
+      const typingId = this.showTyping();
+      
+      // Get AI response
+      const reply = await this.getAIResponse(msg);
+      
+      // Remove typing indicator and show reply
+      this.removeTyping(typingId);
+      this.appendMessage(reply, "bot");
+      
+      // Save chat to Firebase
+      this.saveChat(msg, reply);
+      
+      // Track chat count
+      this.trackChat();
+    },
+    
+    showTyping() {
+      const id = 'typing-' + Date.now();
+      const div = document.createElement("div");
+      div.className = "chat-msg bot";
+      div.id = id;
+      div.innerHTML = `<div class="msg-bubble typing-indicator"><span></span><span></span><span></span></div>`;
+      this.messages.appendChild(div);
+      this.messages.scrollTop = this.messages.scrollHeight;
+      return id;
+    },
+    
+    removeTyping(id) {
+      const el = document.getElementById(id);
+      if (el) el.remove();
+    },
+    
+    appendMessage(text, sender) {
+      const div = document.createElement("div");
+      div.className = `chat-msg ${sender}`;
+      div.innerHTML = `<div class="msg-bubble">${text.replace(/\n/g, '<br>')}</div>`;
+      this.messages.appendChild(div);
+      this.messages.scrollTop = this.messages.scrollHeight;
+      return div;
+    },
+    
+    async getAIResponse(msg) {
+      const q = msg.toLowerCase();
+      
+      // Tech support knowledge base
+      const knowledge = {
+        // Software installation
+        'install python': "🐍 To install Python:\n1. Go to python.org/downloads\n2. Download latest version\n3. Run installer (check 'Add to PATH')\n4. Verify with 'python --version'\n\nNeed help with a specific step?",
+        
+        'install node': "📦 Node.js installation:\n1. Visit nodejs.org\n2. Download LTS version\n3. Run installer\n4. Verify with 'node --version'\n\nnpm comes bundled with Node.js!",
+        
+        'install django': "🌐 Django installation:\n```bash\npip install django\ndjango-admin --version\n```\nOr use virtual environment:\n```bash\npython -m venv myenv\nsource myenv/bin/activate  # Linux/Mac\nmyenv\\Scripts\\activate  # Windows\npip install django\n```",
+        
+        // Network issues
+        'network problem': "🌐 Common network fixes:\n1. Check physical connections\n2. Restart router/modem\n3. Run: ipconfig /flushdns\n4. Disable/Enable adapter\n5. Check firewall settings\n\nDescribe your specific issue for detailed help.",
+        
+        'wifi not connecting': "📶 WiFi troubleshooting:\n1. Forget network and reconnect\n2. Check if airplane mode is off\n3. Update network drivers\n4. Reset network: netsh winsock reset\n5. Check router settings\n\nWhich step would you like to try?",
+        
+        'slow internet': "🐢 Slow internet? Try:\n1. Speed test (speedtest.net)\n2. Close background apps\n3. Change DNS to 8.8.8.8\n4. Update router firmware\n5. Check for interference\n\nWhat's your current speed?",
+        
+        // Development
+        'website cost': "💻 Website development costs:\n• Basic site: $500-2000\n• Business site: $2000-8000\n• E-commerce: $5000-15000\n• Custom web app: $10000+\n\nFactors: features, design, complexity.\nTell me your requirements for a quote!",
+        
+        'mobile app cost': "📱 Mobile app development:\n• Simple app: $5000-15000\n• Medium complexity: $15000-40000\n• Complex app: $40000+\n• Maintenance: 15-20% annually\n\nPlatform? Features? Timeline?",
+        
+        'learn programming': "📚 Learning resources:\n• Python: codecademy.com\n• Web dev: freecodecamp.org\n• JavaScript: javascript.info\n• Django: djangoproject.com\n• Mobile: developer.android.com\n\nWhat language interests you?",
+        
+        // Digital Marketing
+        'digital marketing': "📈 Digital marketing services:\n• SEO optimization: $300-1000/mo\n• Social media management: $500-2000/mo\n• Google Ads: $500-5000/mo + ad spend\n• Email marketing: $300-1500/mo\n• Content creation: $100-500/piece\n\nWhich service interests you?",
+        
+        'seo help': "🔍 SEO basics:\n1. Keyword research\n2. On-page optimization\n3. Quality content\n4. Backlink building\n5. Technical SEO\n6. Local SEO\n\nWant a free website audit?",
+        
+        'social media': "📱 Social media management:\n• Content creation\n• Post scheduling\n• Engagement tracking\n• Analytics reporting\n• Ad campaign management\n\nPlatforms: Facebook, Instagram, LinkedIn, Twitter\n\nTell me your goals!",
+        
+        // Contact
+        'contact innox': "📞 You can reach Innox via:\n• Email: innoxoketh@gmail.com\n• Phone: +256 761 073 821\n• WhatsApp: wa.me/256761073821\n• GitHub: github.com/Ioketh\n\nPrefer a specific method?",
+        
+        'hire': "💼 Great! To discuss hiring:\n1. Send a message through contact form\n2. Email CV/requirements\n3. Schedule a call\n\nWhat type of project do you have?",
+        
+        'project inquiry': "🚀 Tell me about your project:\n1. What type of project?\n2. Timeline?\n3. Budget range?\n4. Specific requirements?\n\nShare details and I'll help!",
+        
+        // Technical support
+        'virus': "🦠 Virus/malware removal:\n1. Run Windows Defender scan\n2. Use Malwarebytes\n3. Boot in Safe Mode\n4. Clear temp files\n5. Check browser extensions\n6. Update everything\n\nNeed step-by-step guidance?",
+        
+        'backup': "💾 Backup solutions:\n• Cloud: Google Drive, Dropbox\n• External drive\n• System image backup\n• Automated tools\n\nWhat data do you need to backup?",
+        
+        'password reset': "🔑 Forgot password?\n1. Use 'Forgot password' link\n2. Check recovery email\n3. Contact support\n4. Try password manager\n\nWhich account is locked?",
+        
+        'error message': "⚠️ Please share the exact error message and what you were doing. I'll help diagnose the issue!",
+        
+        'default': "I'm here to help with:\n• Software installation\n• Network problems\n• Development questions\n• Digital marketing\n• Project inquiries\n• Technical support\n\nWhat specific tech issue are you facing? Be as detailed as possible!"
+      };
+      
+      // Find matching response
+      for (const [key, value] of Object.entries(knowledge)) {
+        if (q.includes(key)) return value;
+      }
+      
+      return knowledge['default'];
+    },
+    
+    async saveChat(userMsg, botReply) {
+      if (!firebaseAvailable) return;
+      
       try {
-        const ref = doc(db, "analytics", "chat");
-        await setDoc(ref, { totalChats: increment(1) }, { merge: true });
-      } catch(e) {}
+        await addDoc(collection(db, "chats"), {
+          userMessage: userMsg,
+          botResponse: botReply,
+          timestamp: serverTimestamp(),
+          page: window.location.pathname
+        });
+      } catch (error) {
+        console.warn("Failed to save chat:", error);
+      }
+    },
+    
+    async trackChat() {
+      if (!firebaseAvailable) return;
+      
+      try {
+        const chatRef = doc(db, "analytics", "chat");
+        await setDoc(chatRef, { totalChats: increment(1) }, { merge: true });
+      } catch (error) {
+        console.warn("Failed to track chat:", error);
+      }
     }
-  }
+  };
 
-  async function getAIResponse(msg) {
-    const q = msg.toLowerCase();
-    const faqs = {
-      "skill": "I'm proficient in Django (90%), React/Ionic (85%), Database Management (88%), and Network Security (80%). Also experienced in IoT, Docker, and REST APIs!",
-      "project": "I've built a Hospital Management System, Network Security Monitor, and Campus Connect mobile app. Check the Projects section for details!",
-      "contact": "You can reach innovmax at innoxoketh@gmail.com or call 0761073821 / 0705606889.",
-      "education": "Currently pursuing a BSc in Information Technology at Muni University. Also holds UACE and UCE certificates.",
-      "experience": "Innovmax has 3+ years of professional experience, including software development and fieldwork with Super Terrazal Uganda Ltd, Sunventures, and Noordin Investments.",
-      "available": "Yes! Innovmax is currently available for freelance projects and full-time opportunities.",
-      "django": "Django is INNOVMAX's primary backend framework, used to build RESTful APIs and full-stack web applications with PostgreSQL.",
-      "firebase": "Firebase is used in this portfolio for real-time data, authentication, and analytics. INNOMAX is experienced with Firestore, Auth, and Hosting.",
-      "hello": "Hello! 👋 I'm INNOVMAX's AI assistant. How can I help you today?",
-      "hi": "Hi there! 😊 Ask me anything about INNOVMAX's work, skills, or how to hire him!",
-    };
-    for(const key of Object.keys(faqs)) {
-      if(q.includes(key)) return faqs[key];
-    }
-    return "Great question! For detailed info, feel free to contact  directly at innoxoketh@gmail.com. I can answer questions about skills, projects, education, and availability!";
-  }
-I
-  function appendMsg(text, sender) {
-    const messages = document.getElementById("chat-messages");
-    const div = document.createElement("div");
-    div.className = `chat-msg ${sender}`;
-    div.innerHTML = `<div class="msg-bubble">${text}</div>`;
-    messages.appendChild(div);
-    messages.scrollTop = messages.scrollHeight;
-    return div;
-  }
+  // Initialize chatbot
+  chatbot.init();
+
+  // Notification function
+  window.showNotification = function(msg) {
+    const bar = document.getElementById("notification-bar");
+    document.getElementById("notification-text").textContent = msg;
+    bar.classList.remove("hidden");
+    setTimeout(() => bar.classList.add("hidden"), 5000);
+  };
+
+  // Welcome notification
+  setTimeout(() => {
+    showNotification("👋 Welcome! Try the AI assistant for tech support!");
+  }, 3000);
 </script>
 
+<!-- Non-module JavaScript -->
 <script>
-// ── PARTICLES ──────────────────────────────────────────────
-const canvas = document.getElementById("particles-canvas");
-const ctx = canvas.getContext("2d");
-let particles = [];
+  // Particles animation
+  const canvas = document.getElementById("particles-canvas");
+  const ctx = canvas.getContext("2d");
+  let particles = [];
+  let mouseX = 0, mouseY = 0;
 
-function resize() {
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
-}
-resize();
-window.addEventListener("resize", resize);
-
-class Particle {
-  constructor() { this.reset(); }
-  reset() {
-    this.x = Math.random() * canvas.width;
-    this.y = Math.random() * canvas.height;
-    this.r = Math.random() * 1.5 + 0.3;
-    this.dx = (Math.random() - 0.5) * 0.4;
-    this.dy = (Math.random() - 0.5) * 0.4;
-    this.alpha = Math.random() * 0.5 + 0.1;
+  function resizeCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
   }
-  draw() {
-    ctx.beginPath();
-    ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
-    ctx.fillStyle = `rgba(100,220,180,${this.alpha})`;
-    ctx.fill();
-  }
-  update() {
-    this.x += this.dx; this.y += this.dy;
-    if(this.x < 0 || this.x > canvas.width || this.y < 0 || this.y > canvas.height) this.reset();
-  }
-}
+  resizeCanvas();
+  window.addEventListener("resize", resizeCanvas);
 
-for(let i = 0; i < 120; i++) particles.push(new Particle());
+  document.addEventListener("mousemove", (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+  });
 
-function animParticles() {
-  ctx.clearRect(0,0,canvas.width,canvas.height);
-  particles.forEach(p => { p.update(); p.draw(); });
-  // Draw connections
-  particles.forEach((a, i) => {
-    particles.slice(i+1).forEach(b => {
-      const dist = Math.hypot(a.x-b.x, a.y-b.y);
-      if(dist < 100) {
-        ctx.beginPath();
-        ctx.moveTo(a.x, a.y);
-        ctx.lineTo(b.x, b.y);
-        ctx.strokeStyle = `rgba(100,220,180,${0.08*(1-dist/100)})`;
-        ctx.lineWidth = 0.5;
-        ctx.stroke();
+  class Particle {
+    constructor() {
+      this.reset();
+    }
+    reset() {
+      this.x = Math.random() * canvas.width;
+      this.y = Math.random() * canvas.height;
+      this.r = Math.random() * 2.5 + 0.8;
+      this.dx = (Math.random() - 0.5) * 0.4;
+      this.dy = (Math.random() - 0.5) * 0.4;
+      this.alpha = Math.random() * 0.5 + 0.2;
+      this.originalAlpha = this.alpha;
+      this.color = Math.random() > 0.7 ? '#3fffa0' : '#0af';
+    }
+    draw() {
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
+      ctx.fillStyle = this.color.replace(')', `, ${this.alpha})`).replace('rgb', 'rgba');
+      ctx.fill();
+    }
+    update() {
+      const dx = mouseX - this.x;
+      const dy = mouseY - this.y;
+      const dist = Math.sqrt(dx * dx + dy * dy);
+      if (dist < 150) {
+        const angle = Math.atan2(dy, dx);
+        const force = (150 - dist) / 2000;
+        this.x -= Math.cos(angle) * force;
+        this.y -= Math.sin(angle) * force;
+        this.alpha = Math.min(this.originalAlpha + 0.3, 0.8);
+      } else {
+        this.alpha = this.originalAlpha;
+      }
+      
+      this.x += this.dx;
+      this.y += this.dy;
+      
+      if (this.x < 0 || this.x > canvas.width || this.y < 0 || this.y > canvas.height) {
+        this.reset();
+      }
+    }
+  }
+
+  for (let i = 0; i < 200; i++) particles.push(new Particle());
+
+  function animateParticles() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    
+    particles.forEach(p => {
+      p.update();
+      p.draw();
+    });
+    
+    particles.forEach((a, i) => {
+      particles.slice(i + 1).forEach(b => {
+        const dist = Math.hypot(a.x - b.x, a.y - b.y);
+        if (dist < 120) {
+          ctx.beginPath();
+          ctx.moveTo(a.x, a.y);
+          ctx.lineTo(b.x, b.y);
+          ctx.strokeStyle = `rgba(63, 255, 160, ${0.06 * (1 - dist/120)})`;
+          ctx.lineWidth = 0.8;
+          ctx.stroke();
+        }
+      });
+    });
+    
+    requestAnimationFrame(animateParticles);
+  }
+  animateParticles();
+
+  // Typing animation
+  const phrases = [
+    "Full Stack Applications",
+    "Django Backends",
+    "Ionic Mobile Apps", 
+    "Secure Networks",
+    "IoT Systems",
+    "Software Solutions",
+    "Digital Experiences"
+  ];
+  let phraseIndex = 0, charIndex = 0, isDeleting = false;
+  const typingEl = document.getElementById("typing-text");
+
+  function typeLoop() {
+    const currentPhrase = phrases[phraseIndex];
+    
+    if (!isDeleting) {
+      typingEl.textContent = currentPhrase.slice(0, ++charIndex);
+      if (charIndex === currentPhrase.length) {
+        isDeleting = true;
+        setTimeout(typeLoop, 2000);
+        return;
+      }
+    } else {
+      typingEl.textContent = currentPhrase.slice(0, --charIndex);
+      if (charIndex === 0) {
+        isDeleting = false;
+        phraseIndex = (phraseIndex + 1) % phrases.length;
+      }
+    }
+    
+    setTimeout(typeLoop, isDeleting ? 50 : 100);
+  }
+  typeLoop();
+
+  // Navbar scroll effect
+  const navbar = document.getElementById("navbar");
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 60) {
+      navbar.classList.add("scrolled");
+    } else {
+      navbar.classList.remove("scrolled");
+    }
+  });
+
+  // Mobile menu
+  document.getElementById("hamburger").addEventListener("click", () => {
+    document.getElementById("nav-links").classList.toggle("open");
+  });
+
+  // Theme toggle
+  const themeToggle = document.getElementById("theme-toggle");
+  const html = document.documentElement;
+  const savedTheme = localStorage.getItem("theme") || "dark";
+  html.setAttribute("data-theme", savedTheme);
+
+  themeToggle.addEventListener("click", () => {
+    const current = html.getAttribute("data-theme");
+    const next = current === "dark" ? "light" : "dark";
+    html.setAttribute("data-theme", next);
+    localStorage.setItem("theme", next);
+  });
+
+  // Scroll reveal
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+      }
+    });
+  }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
+
+  document.querySelectorAll(".reveal").forEach(el => revealObserver.observe(el));
+
+  // Skill bars animation
+  const skillObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.querySelectorAll(".skill-fill").forEach(bar => {
+          bar.style.width = bar.dataset.width + "%";
+        });
+      }
+    });
+  }, { threshold: 0.5 });
+
+  document.querySelectorAll(".skills-grid").forEach(grid => skillObserver.observe(grid));
+
+  // 3D tilt effect for cards
+  function initTiltCards() {
+    document.querySelectorAll("[data-tilt]").forEach(card => {
+      card.addEventListener("mousemove", (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = (e.clientX - rect.left) / rect.width - 0.5;
+        const y = (e.clientY - rect.top) / rect.height - 0.5;
+        card.style.transform = `perspective(1000px) rotateY(${x * 15}deg) rotateX(${-y * 15}deg) scale(1.02)`;
+      });
+      card.addEventListener("mouseleave", () => {
+        card.style.transform = "";
+      });
+    });
+  }
+  window.initTiltCards = initTiltCards;
+
+  // GitHub repos fetch
+  async function loadGithubRepos() {
+    const grid = document.getElementById("github-grid");
+    try {
+      const response = await fetch("https://api.github.com/users/Ioketh/repos?sort=updated&per_page=6");
+      if (!response.ok) throw new Error("GitHub API error");
+      const repos = await response.json();
+      
+      if (repos.length === 0) throw new Error("No repos found");
+      
+      grid.innerHTML = "";
+      repos.forEach(repo => {
+        const card = document.createElement("div");
+        card.className = "github-card reveal";
+        card.innerHTML = `
+          <div class="gh-lang">${repo.language || "Code"}</div>
+          <h4>${repo.name}</h4>
+          <p>${repo.description || "No description available."}</p>
+          <div class="gh-footer">
+            <span>⭐ ${repo.stargazers_count}</span>
+            <span>🍴 ${repo.forks_count}</span>
+            <a href="${repo.html_url}" target="_blank">View Repo →</a>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+    } catch (error) {
+      console.warn("GitHub fetch failed, using fallback:", error);
+      grid.innerHTML = `
+        <div class="github-card reveal">
+          <div class="gh-lang">Python</div>
+          <h4>django-hospital-api</h4>
+          <p>Hospital management REST API with Django and PostgreSQL.</p>
+          <div class="gh-footer">
+            <span>⭐ 12</span>
+            <a href="https://github.com/Ioketh" target="_blank">View Repo →</a>
+          </div>
+        </div>
+        <div class="github-card reveal delay-1">
+          <div class="gh-lang">JavaScript</div>
+          <h4>muni-library-app</h4>
+          <p>Library management system for Muni University.</p>
+          <div class="gh-footer">
+            <span>⭐ 8</span>
+            <a href="https://github.com/Ioketh" target="_blank">View Repo →</a>
+          </div>
+        </div>
+        <div class="github-card reveal delay-2">
+          <div class="gh-lang">Python</div>
+          <h4>network-security-monitor</h4>
+          <p>Real-time network intrusion detection using Python.</p>
+          <div class="gh-footer">
+            <span>⭐ 5</span>
+            <a href="https://github.com/Ioketh" target="_blank">View Repo →</a>
+          </div>
+        </div>
+      `;
+    }
+  }
+  loadGithubRepos();
+
+  // Smooth scroll for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener("click", function(e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute("href"));
+      if (target) {
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
+        document.getElementById("nav-links").classList.remove("open");
       }
     });
   });
-  requestAnimationFrame(animParticles);
-}
-animParticles();
 
-// ── TYPING ANIMATION ────────────────────────────────────────
-const phrases = [
-  "Full Stack Applications",
-  "Django Backends",
-  "Ionic Mobile Apps",
-  "Secure Networks",
-  "IoT Systems",
-  "Database Solutions"
-];
-let pi = 0, ci = 0, del = false;
-const el = document.getElementById("typing-text");
-
-function typeLoop() {
-  const phrase = phrases[pi];
-  if(!del) {
-    el.textContent = phrase.slice(0, ++ci);
-    if(ci === phrase.length) { del = true; setTimeout(typeLoop, 1800); return; }
-  } else {
-    el.textContent = phrase.slice(0, --ci);
-    if(ci === 0) { del = false; pi = (pi+1) % phrases.length; }
-  }
-  setTimeout(typeLoop, del ? 50 : 90);
-}
-typeLoop();
-
-// ── NAVBAR ──────────────────────────────────────────────────
-const navbar = document.getElementById("navbar");
-window.addEventListener("scroll", () => {
-  navbar.classList.toggle("scrolled", window.scrollY > 60);
-});
-
-document.getElementById("hamburger").addEventListener("click", () => {
-  document.getElementById("nav-links").classList.toggle("open");
-});
-
-// ── THEME TOGGLE ────────────────────────────────────────────
-const themeBtn = document.getElementById("theme-toggle");
-const html = document.documentElement;
-const saved = localStorage.getItem("theme") || "dark";
-html.setAttribute("data-theme", saved);
-
-themeBtn.addEventListener("click", () => {
-  const cur = html.getAttribute("data-theme");
-  const next = cur === "dark" ? "light" : "dark";
-  html.setAttribute("data-theme", next);
-  localStorage.setItem("theme", next);
-});
-
-// ── SCROLL REVEAL ───────────────────────────────────────────
-const revealObs = new IntersectionObserver((entries) => {
-  entries.forEach(e => {
-    if(e.isIntersecting) { e.target.classList.add("visible"); }
-  });
-}, { threshold: 0.12 });
-
-function initReveal() {
-  document.querySelectorAll(".reveal").forEach(el => revealObs.observe(el));
-}
-initReveal();
-
-// ── SKILL BAR ANIMATION ─────────────────────────────────────
-const skillObs = new IntersectionObserver((entries) => {
-  entries.forEach(e => {
-    if(e.isIntersecting) {
-      e.target.querySelectorAll(".skill-fill").forEach(bar => {
-        bar.style.width = bar.dataset.width + "%";
-      });
-    }
-  });
-}, { threshold: 0.3 });
-document.querySelectorAll(".skills-grid").forEach(s => skillObs.observe(s));
-
-// ── 3D TILT ─────────────────────────────────────────────────
-function initTiltCards() {
-  document.querySelectorAll("[data-tilt]").forEach(card => {
-    card.addEventListener("mousemove", e => {
-      const r = card.getBoundingClientRect();
-      const x = (e.clientX - r.left) / r.width - 0.5;
-      const y = (e.clientY - r.top) / r.height - 0.5;
-      card.style.transform = `perspective(700px) rotateY(${x*12}deg) rotateX(${-y*12}deg) scale(1.03)`;
-    });
-    card.addEventListener("mouseleave", () => {
-      card.style.transform = "";
-    });
-  });
-}
-initTiltCards();
-
-// ── GITHUB REPOS ─────────────────────────────────────────────
-async function loadGithub() {
-  const grid = document.getElementById("github-grid");
-  try {
-    // Replace "palamena" with actual GitHub username if different
-    const res = await fetch("https://api.github.com/users/i.oketh/repos?sort=updated&per_page=6");
-    if(!res.ok) throw new Error("GitHub API error");
-    const repos = await res.json();
-    grid.innerHTML = "";
-    repos.slice(0,6).forEach(repo => {
-      const card = document.createElement("div");
-      card.className = "github-card reveal";
-      card.innerHTML = `
-        <div class="gh-lang">${repo.language || "Code"}</div>
-        <h4>${repo.name}</h4>
-        <p>${repo.description || "No description provided."}</p>
-        <div class="gh-footer">
-          <span>⭐ ${repo.stargazers_count}</span>
-          <a href="${repo.html_url}" target="_blank">View Repo →</a>
-        </div>`;
-      grid.appendChild(card);
-    });
-    initReveal();
-  } catch(e) {
-    grid.innerHTML = `
-      <div class="github-card reveal"><div class="gh-lang">Python</div><h4>django-hospital-api</h4><p>Hospital management REST API built with Django and PostgreSQL.</p><div class="gh-footer"><span>⭐ 12</span><a href="#" target="_blank">View →</a></div></div>
-      <div class="github-card reveal delay-1"><div class="gh-lang">JavaScript</div><h4>campus-connect-app</h4><p>Ionic cross-platform app for university students.</p><div class="gh-footer"><span>⭐ 8</span><a href="#" target="_blank">View →</a></div></div>
-      <div class="github-card reveal delay-2"><div class="gh-lang">Python</div><h4>network-security-monitor</h4><p>Real-time network intrusion detection using Python.</p><div class="gh-footer"><span>⭐ 5</span><a href="#" target="_blank">View →</a></div></div>
-    `;
-    initReveal();
-  }
-}
-loadGithub();
-
-// ── CHATBOT ──────────────────────────────────────────────────
-const fab = document.getElementById("chatbot-fab");
-const win = document.getElementById("chatbot-window");
-const closeBtn = document.getElementById("chat-close");
-const badge = document.getElementById("chat-badge");
-
-fab.addEventListener("click", () => {
-  win.classList.toggle("open");
-  badge.style.display = "none";
-});
-closeBtn.addEventListener("click", () => win.classList.remove("open"));
-
-// ── NOTIFICATION ─────────────────────────────────────────────
-function showNotification(msg) {
-  const bar = document.getElementById("notification-bar");
-  document.getElementById("notification-text").textContent = msg;
-  bar.classList.remove("hidden");
-  setTimeout(() => bar.classList.add("hidden"), 6000);
-}
-
-// Demo notification
-setTimeout(() => showNotification("🚀 Welcome to INNOX's Portfolio! Check out the latest projects below."), 2000);
+  // Initialize tilt cards after loading
+  setTimeout(initTiltCards, 1000);
 </script>
+
+<!-- Add WhatsApp button styles -->
+<style>
+  .btn-whatsapp {
+    background: #25D366;
+    color: white;
+    padding: 14px 32px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 15px;
+    text-decoration: none;
+    transition: all 0.25s;
+    display: inline-block;
+    border: none;
+    cursor: pointer;
+    letter-spacing: 0.5px;
+  }
+  
+  .btn-whatsapp:hover {
+    background: #128C7E;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(37, 211, 102, 0.3);
+  }
+  
+  .chat-quick-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 10px 20px 20px;
+    border-top: 1px solid var(--border);
+  }
+  
+  .quick-action {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 6px 12px;
+    font-size: 12px;
+    color: var(--text2);
+    cursor: pointer;
+    transition: all 0.2s;
+    flex: 1 1 auto;
+  }
+  
+  .quick-action:hover {
+    background: var(--accent);
+    color: #000;
+    border-color: var(--accent);
+  }
+  
+  .typing-indicator {
+    display: flex;
+    gap: 4px;
+    padding: 12px 16px;
+  }
+  
+  .typing-indicator span {
+    width: 8px;
+    height: 8px;
+    background: var(--accent);
+    border-radius: 50%;
+    animation: typing 1.4s infinite;
+  }
+  
+  .typing-indicator span:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+  
+  .typing-indicator span:nth-child(3) {
+    animation-delay: 0.4s;
+  }
+  
+  @keyframes typing {
+    0%, 60%, 100% { transform: translateY(0); opacity: 0.4; }
+    30% { transform: translateY(-10px); opacity: 1; }
+  }
+  
+  @media (max-width: 768px) {
+    .hero-actions {
+      flex-direction: column;
+      align-items: stretch;
+    }
+    
+    .btn-whatsapp {
+      text-align: center;
+    }
+  }
+</style>
 </body>
 </html>
